@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LandingPage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+    <link rel="stylesheet" href="LandingPage.css">
+</head>
+<body>
+    <nav class="nvbar navbar-expand-sm bg-light navbar-light fixed-top">
+
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <a class="navbar-brand active" href="LandingPage.html">Adventure Planet</a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#section1" onmouseover="cursorOn(this)" onmouseout="cursorOff(this)">Adventures</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#section2" onmouseover="cursorOn(this)" onmouseout="cursorOff(this)">Transport</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#section3" onmouseover="cursorOn(this)" onmouseout="cursorOff(this)">Accomodation</a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="AboutUS.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contactus.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#section3" onmouseover="cursorOn(this)" onmouseout="cursorOff(this)">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- ######################################################################################################## -->
+    <!-- <nav class="navbar navbar-expand-lg fixed-top navbar-light">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#">Adventure</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Adventure 1</a>
+                            <a class="dropdown-item" href="#">Adventure 2</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Transport</a>
+                    </li>
+                </ul>
+
+                <a class="navbar-brand d-none d-lg-flex" href="#">SiteName</a>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Accomodation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>       -->
+    <!-- ########################################################################################################### -->
+    <div class="parallax">
+            <!-- <img id="logo" src="logo1.png" alt=""> -->
+        <div id="inparallax">
+            <h1>Make your life Adventurous</h1>
+        </div>
+    </div>
+    <div class="oneparallax">
+        <p id="onparallaxpara">If adventure sports and extreme activities press all your buttons, get ready for the trip of a lifetime.</p> 
+    </div>  
+    <div id="parallax2"></div>  
+    
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card">
+                <img class="card-img-top w-100" src="images/adventure4.jpg" alt="Card image">
+                <div class="card-body">
+                <h4 class="card-title">Scuba Diving</h4>
+                <a href="#" class="btn btn-primary">Experience It!</a>
+            </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card">
+                <img class="card-img-top w-100" src="images/adventure5.jpg" alt="Card image">
+                <div class="card-body">
+                <h4 class="card-title">Bungee Jumping</h4>
+                <a href="#" class="btn btn-primary">Experience It!</a>
+            </div>
+            </div>
+        </div>
+    
+        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card">
+                <img class="card-img-top w-100" src="images/adventure6.jpg" alt="Card image">
+                <div class="card-body">
+                <h4 class="card-title">River Rafting</h4>
+                <a href="#" class="btn btn-primary">Experience It!</a>
+            </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card">
+                <img class="card-img-top  w-100" src="images/adventure7.jpg" alt="Card image">
+                <div class="card-body">
+                <h4 class="card-title">Paragliding</h4>
+                <a href="#" class="btn btn-primary">Experience It!</a>
+            </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card">
+                <img class="card-img-top  w-100" src="images/adventure8.jpg" alt="Card image">
+                <div class="card-body">
+                <h4 class="card-title">Hiking</h4>
+                <a href="#" class="btn btn-primary">Experience It!</a>
+            </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card">
+                <img class="card-img-top w-100" src="images/adventure9.jpg" alt="Card image">
+                <div class="card-body">
+                <h4 class="card-title">WakeBoarding</h4>
+                <a href="#" class="btn btn-primary">Experience It!</a>
+            </div>
+            </div>
+        </div>
+    
+        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card">
+                <img class="card-img-top w-100" src="images/adventure10.jpg" alt="Card image">
+                <div class="card-body">
+                <h4 class="card-title">Mountain Biking</h4>
+                <a href="#" class="btn btn-primary">Experience It!</a>
+            </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card">
+                <img class="card-img-top w-100" src="images/adventure11.jpg" alt="Card image">
+                <div class="card-body">
+                <h4 class="card-title">Surfing</h4>
+                <a href="#" class="btn btn-primary">Experience It!</a>
+            </div>
+            </div>
+        </div>
+    </div>
+          <div id="parallax3"></div>
+        <footer class="content-info">
+            <div class="footer_first">
+                <img src="images/logo.png" alt="Logo">
+            </div>
+            <div class="footer_second">
+                <a href="mailto:relekar.a@husky.neu.edu">adventureplanet@gmail.com</a>
+                <span> | &copyAdventure Planet | </span>
+                <span><a href="#">Terms and Conditions</a></span>
+                <span> | Designed For Adventure Planet</span>
+            </div>
+            <div>
+                Follow us on
+            </div>
+            <div>
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-linkedin"></a>
+            </div>
+        </footer>
+    </div>
+    <script>
+            function cursorOn(x) {
+                x.classList.add("not-allowed");
+            }
+            
+            function cursorOff(x) {
+                x.classList.remove("not-allowed");
+            }
+        </script>
+</body>
+</html>

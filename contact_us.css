@@ -1,0 +1,141 @@
+
+.nextpara {
+    min-height: 215px;
+    padding: 5px;
+}
+
+.nextpara aside {
+    width: 33.32%;
+    float: left;
+    padding: 5px;
+    text-align: justify;
+}
+
+.nextpara h2 {
+    text-align: center;
+}
+
+#meet {
+    background-color: gray;
+    height: 250px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#logo {
+    background-color: white;
+    height: 250px;
+    border: none;
+    font-family: 'Orbitron', sans-serif;
+    background-image: url(images/logo.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#id {
+    background-color: aqua;
+}
+
+#dont {
+    font-size: 35px;
+    color: red;
+    font-weight: bolder;
+    padding-left: 20px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#just {
+    font-size: 30px;
+    font-weight: bolder;
+    padding-left: 20px;
+    font-family: 'Audiowide', cursive;
+}
+
+#feel {
+    font-style: italic;
+    padding-left: 20px;
+}
+
+#mapss {
+    background-image: url(images/mapss.jpg);
+    height: 250px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+h3 {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    background-color: black;
+    font-size: 40px;
+    color: aliceblue;
+    font-family: 'Supermercado One', cursive;
+    padding-top: 40px;
+}
+
+input {
+    width: 400px;
+    text-align: center;
+}
+
+
+form {
+    text-align: center;
+}
+
+#message {
+    font-size: 35px;
+    font-family: 'Monoton', cursive;
+}
+/****************************************** Footer *************************************************/
+
+.content-info {
+    height: 350px;
+    background: #000a12;
+    text-align: center;
+    font-family: "Bree Serif";
+    color: white;
+    margin-bottom: 1%;
+    margin-top: 10%;
+}
+
+
+.footer_second a {
+    color: gray;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 20px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 40px;
+    height: 10px;
+    width: 7px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    color: white;
+}
+
+.fa-instagram {
+    color: white;
+}
+
+.fa-linkedin {
+    color: white;
+}
+/* Integration */
+.not-allowed {
+    cursor: not-allowed;
+}
+
+.active {
+    font-weight: 800;
+}
