@@ -6,6 +6,7 @@ import { AboutUsHeaderImageComponent } from './about-us-header-image/about-us-he
   declarations: [AboutUsHeaderImageComponent],
   imports: [
     CommonModule
-  ]
+  ],
+  exports:[AboutUsHeaderImageComponent]
 })
 export class AboutUsModule { }

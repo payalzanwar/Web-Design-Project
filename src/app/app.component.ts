@@ -9,13 +9,6 @@ import * as $ from 'jquery';
 export class AppComponent implements OnInit{
   title = 'Adventure Planet';
   ngOnInit(){
-    $(document).ready(function(){
-      $(window).on('load', function () {
-        var $preloader = $('.wrapper');
-        var $spinner   = $preloader.find('.loader');
-        $spinner.delay(3000).fadeOut('slow');
-        $preloader.delay(3000).fadeOut('slow');
-    });
-    })
+    
   }
 }
