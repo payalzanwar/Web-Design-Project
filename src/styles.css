@@ -1,4 +1,9 @@
+@import "~bootstrap/dist/css/bootstrap.css"; 
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+
 body{
     margin: 0;
     background-color: black;
+    max-width: 100%;
+    overflow-x: hidden;
 }

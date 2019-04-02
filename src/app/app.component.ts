@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
 import * as $ from 'jquery';
 
 @Component({
@@ -8,6 +9,9 @@ import * as $ from 'jquery';
 })
 export class AppComponent implements OnInit{
   title = 'Adventure Planet';
+
+  constructor(private router: Router) { }
+
   ngOnInit(){
     $(document).ready(function(){
       $(window).on('load', function () {
@@ -15,7 +19,10 @@ export class AppComponent implements OnInit{
         var $spinner   = $preloader.find('.loader');
         $spinner.delay(3000).fadeOut('slow');
         $preloader.delay(3000).fadeOut('slow');
+      });
     });
-    })
+    setTimeout(() => {
+      this.router.navigate(['/home']);
+  }, 4000);
   }
 }
