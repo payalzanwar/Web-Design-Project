@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AboutUsModule } from './about-us/about-us.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HeaderModule } from './header/header.module';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     AppRoutingModule,
     AboutUsModule,
+    HeaderModule,
     NgbModule.forRoot()
   ],
   providers: [],

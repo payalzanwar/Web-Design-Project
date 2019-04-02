@@ -4,12 +4,14 @@ import { AboutUsHeaderImageComponent } from './about-us-header-image/about-us-he
 import { AboutUsJumbotronComponent } from './about-us-jumbotron/about-us-jumbotron.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AboutCardsComponent } from './about-cards/about-cards.component';
+import { HeaderModule } from '../header/header.module';
 
 @NgModule({
   declarations: [AboutUsHeaderImageComponent, AboutUsJumbotronComponent, AboutCardsComponent],
   imports: [
     CommonModule,
-    NgbModule
+    NgbModule,
+    HeaderModule
   ],
   exports:[
     AboutUsHeaderImageComponent,
