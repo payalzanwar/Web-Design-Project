@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AboutUsModule } from './about-us/about-us.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderModule } from './header/header.module';
+import { PackagePageModule } from './package-page/package-page.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { HeaderModule } from './header/header.module';
     AppRoutingModule,
     AboutUsModule,
     HeaderModule,
+    PackagePageModule,
     NgbModule.forRoot()
   ],
   providers: [],
