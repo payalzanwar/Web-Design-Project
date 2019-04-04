@@ -4,9 +4,10 @@ import { AboutUsHeaderImageComponent } from './about-us-header-image/about-us-he
 import { AboutUsJumbotronComponent } from './about-us-jumbotron/about-us-jumbotron.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AboutCardsComponent } from './about-cards/about-cards.component';
+import { AboutUsPageComponent } from './about-us-page/about-us-page.component';
 
 @NgModule({
-  declarations: [AboutUsHeaderImageComponent, AboutUsJumbotronComponent, AboutCardsComponent],
+  declarations: [AboutUsHeaderImageComponent, AboutUsJumbotronComponent, AboutCardsComponent, AboutUsPageComponent],
   imports: [
     CommonModule,
     NgbModule
@@ -14,7 +15,8 @@ import { AboutCardsComponent } from './about-cards/about-cards.component';
   exports:[
     AboutUsHeaderImageComponent,
     AboutUsJumbotronComponent,
-    AboutCardsComponent
+    AboutCardsComponent,
+    AboutUsPageComponent
   ]
 })
 export class AboutUsModule { }

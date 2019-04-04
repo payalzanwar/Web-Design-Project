@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AboutUsModule } from './about-us/about-us.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {ContactUsModule} from './contact-us/contact-us.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     AppRoutingModule,
     AboutUsModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    ContactUsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
