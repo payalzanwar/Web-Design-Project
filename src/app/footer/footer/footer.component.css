@@ -17,6 +17,7 @@
 }
 
 .help-section{
+    padding: 5%;
     position: relative;
     float: left;
     width: 50%;
@@ -24,8 +25,26 @@
 }
 
 .contact-section{
+    padding: 5%;
     position: relative;
     float: right;
     width: 50%;
     top: 0%;
+}
+
+.socialmedia-section{
+    position: relative;
+    padding: 10%;
+    top: 0%;
+    width: 100%;
+    height: 50%;
+}
+.logo-section{
+    position: relative;
+    width:100%;
+    height:100%;
+    background-color: aliceblue;
+}
+.logo-section >img{
+    width:100%;
 }
