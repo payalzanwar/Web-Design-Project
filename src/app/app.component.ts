@@ -7,6 +7,9 @@ import * as $ from 'jquery';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'AdventurePlanet';
+export class AppComponent implements OnInit{
+  title = 'Adventure Planet';
+  ngOnInit(){
+    
+  }
 }

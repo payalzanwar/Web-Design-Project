@@ -6,7 +6,9 @@ import { TransportSitesComponent } from './transport-list/transport-sites/transp
 import { HomePageComponent } from './home-page/home-page.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
-
+import { AboutUsHeaderImageComponent } from './about-us/about-us-header-image/about-us-header-image.component';
+import { CardPackageComponent } from './package-page/card-package/card-package.component';
+import { FooterComponent } from './footer/footer/footer.component';
 import { AuthenticationService as AuthGuard } from './service/authentication.service';
 
 const routes: Routes = [
@@ -16,10 +18,11 @@ const routes: Routes = [
   {path:'transportTypes', component: TransportListComponent, canActivate: [AuthGuard]},
   {path:'transportSites/:transportType', component: TransportSitesComponent, canActivate: [AuthGuard]},
   {path:'signup', component: SignupPageComponent},
-  {path:'login', component: LoginPageComponent}
-
-];
-
+  {path:'login', component: LoginPageComponent},
+  {path:'aboutus',component:AboutUsHeaderImageComponent},
+  {path:'packagelist',component:CardPackageComponent},
+  {path:'footer',component:FooterComponent}]
+  
 @NgModule({
   imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
   exports: [RouterModule],

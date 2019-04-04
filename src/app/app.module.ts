@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomepageModule } from './homepage/homepage.module';
@@ -14,6 +14,9 @@ import { SignupPageComponent } from './signup-page/signup-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { TransportListComponent } from './transport-list/transport-list.component';
 import { TransportSitesComponent } from './transport-list/transport-sites/transport-sites.component';
+import { PackagePageModule } from './package-page/package-page.module';
+import { FooterModule } from './footer/footer.module';
+import { AboutUsModule } from './about-us/about-us.module';
 
 
 @NgModule({
@@ -34,6 +37,9 @@ import { TransportSitesComponent } from './transport-list/transport-sites/transp
     PreloaderpageModule
     FormsModule,
     HttpClientModule,
+    AboutUsModule,
+    PackagePageModule,
+    FooterModule,
     NgbModule
   ],
   exports: [
