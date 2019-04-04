@@ -1,0 +1,26 @@
+<div class="header-container">
+  <aside class="side-navigation">
+    <div class="context-menu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+
+        <div class="title-menu">Menu</div>
+    </div>  
+  </aside>
+
+  <div class="main-logo">
+      <img src="assets/images/home/icon.jpg" alt="Adventure Planet" class="rounded-circle"/>
+    </div>
+
+  <form class="form-inline my-2 my-lg-0">
+      <div *ngIf="this.userObject;else login">
+          Welcome {{this.currentUser}}
+        <a (click)="logout()"><button class="btn btn-outline-success my-2 my-sm-0" type="button">Logout</button></a>
+      </div>
+      <ng-template #login>
+      <a [routerLink]="['/login']"><button class="btn btn-outline-info my-2 my-sm-0  mr-3" type="button">Login</button></a>
+      <a [routerLink]="['/signup']"><button class="btn btn-outline-info my-2 my-sm-0" type="button">SignUp</button></a>
+      </ng-template>
+  </form>
+</div>
