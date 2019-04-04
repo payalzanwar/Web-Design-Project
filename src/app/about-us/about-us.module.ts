@@ -5,13 +5,15 @@ import { AboutUsJumbotronComponent } from './about-us-jumbotron/about-us-jumbotr
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AboutCardsComponent } from './about-cards/about-cards.component';
 import { HeaderModule } from '../header/header.module';
+import { FooterModule } from '../footer/footer.module';
 
 @NgModule({
   declarations: [AboutUsHeaderImageComponent, AboutUsJumbotronComponent, AboutCardsComponent],
   imports: [
     CommonModule,
     NgbModule,
-    HeaderModule
+    HeaderModule,
+    FooterModule
   ],
   exports:[
     AboutUsHeaderImageComponent,
