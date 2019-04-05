@@ -12,7 +12,7 @@ export class LoginPageComponent implements OnInit {
 
   @ViewChild('content') public templateref: TemplateRef<any>;
 
-  errorMsg: string = '';
+  errorMsg: string = 'Unable to connect to server';
   model: any = {};
 
   constructor(private userService: UserService, private router: Router, private modalService: NgbModal, private modalConfig: NgbModalConfig) {

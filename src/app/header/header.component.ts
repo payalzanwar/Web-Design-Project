@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
 import {Router} from '@angular/router';
 import { UserService } from '../service/user.service';
+import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-header',
@@ -9,10 +11,14 @@ import { UserService } from '../service/user.service';
 })
 export class HeaderComponent implements OnInit {
 
+  @ViewChild('content') public templateref: TemplateRef<any>;
+
   userObject: any = {};
 
   currentUser: string = '';
-  constructor(private userService: UserService, private router: Router) { 
+  constructor(private userService: UserService, private router: Router, private modalService: NgbModal, private modalConfig: NgbModalConfig) {
+    modalConfig.backdrop = 'static';
+    modalConfig.keyboard = false;
 
     this.userObject = this.userService.getLoggedInUser();
     console.log(this.userObject);

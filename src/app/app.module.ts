@@ -12,6 +12,8 @@ import { SignupPageComponent } from './signup-page/signup-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { TransportListComponent } from './transport-list/transport-list.component';
 import { TransportSitesComponent } from './transport-list/transport-sites/transport-sites.component';
+import { PreloaderPageComponent } from './preloader-page/preloader-page.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { TransportSitesComponent } from './transport-list/transport-sites/transp
     SignupPageComponent,
     LoginPageComponent,
     TransportListComponent,
-    TransportSitesComponent
+    TransportSitesComponent,
+    PreloaderPageComponent,
+    FooterComponent
 
   ],
   imports: [

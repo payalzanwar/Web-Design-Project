@@ -6,11 +6,11 @@ import { TransportSitesComponent } from './transport-list/transport-sites/transp
 import { HomePageComponent } from './home-page/home-page.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
-
+import { PreloaderPageComponent } from './preloader-page/preloader-page.component';
 import { AuthenticationService as AuthGuard } from './service/authentication.service';
 
 const routes: Routes = [
-  {path:'', redirectTo: 'home', pathMatch: 'full'},
+  {path:'', component: PreloaderPageComponent},
   {path:'home', component: HomePageComponent},
   {path:'transportTypes', component: TransportListComponent, canActivate: [AuthGuard]},
   {path:'transportSites/:transportType', component: TransportSitesComponent, canActivate: [AuthGuard]},

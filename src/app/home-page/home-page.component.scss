@@ -29,8 +29,7 @@ body{
 
 .parallax_one {
     /* The image used */
-    
-    background: url("../../assets/images/home/adventure2.jpg") no-repeat;
+    background: url("/../assets/images/home/adventure8.jpg") no-repeat;
     /* Set a specific height */
 	overflow: hidden;
     min-height: 700px;
@@ -43,9 +42,10 @@ body{
 
 #parallax_two {
     /* The image used */
-    background: url("../../assets/images/home/sample.jpeg") no-repeat;
+    background: url("/../assets/images/home/adventure9.jpg") no-repeat;
+    opacity: 0.8;
     /* Set a specific height */
-    min-height: 700px;
+    min-height: 600px;
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
@@ -55,11 +55,25 @@ body{
 
 #parallax_three {
     /* The image used */
-    background: url("../../assets/images/home/adventure1.jpg") no-repeat;
+    background: url("/../assets/images/home/adventure7.jpg") no-repeat;
+    opacity: 0.8;
     /* Set a specific height */
     min-height: 700px;
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#parallax_four {
+    /* The image used */
+    background: url("/../assets/images/home/adventure12.jpg") no-repeat;
+    /* opacity: 0.8; */
+    /* Set a specific height */
+    min-height: 700px;
+    /* Create the parallax scrolling effect */
+    /* background-attachment: fixed; */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -78,10 +92,13 @@ h1{
     /* position: absolute; */
     color: white;
     font-size: 90px;
+    /* animation: 2s ease-out 0s 1 slideInFromLeft; */
+    transform: scale(1.3);
+    transition: 1s;
 }
 
 h1:hover{
-    transform: scale(1.3);
+    transform: scale(0.9);
     transition: 1s;
 }
 
@@ -96,23 +113,37 @@ h1:hover{
     position: absolute;
     margin-left: 140px;
     margin-right: 0;
-    padding-top: 240px;
+    padding-top: 220px;
     font-size:20px;
     text-align: center;
     width: 30%;
     color: white;
 }
 
-#introimage{
+
+#intro:hover{
+    transform: scale(1.2);
+    transition: 1s;
+}
+
+#introimage {
     position: absolute;
-    left: 50%;
+    left: 43%;
     width: 47%;
     height: 100%;
     /* background-color: aqua; */
-    background: url("../../assets/images/home/adventure1.jpg") no-repeat;
     /* background: url("/../assets/adventure1.jpg") no-repeat; */
     background-size: 100%;
 }
+
+#cardintro {
+    float: right;
+    /* position: absolute; */
+    /* left: 63%; */
+    /* width: 47%; */
+    /* height: 100%; */
+}
+
 
 /* #introimage:hover{
     transform: translate(-50px, 100px);
@@ -136,7 +167,6 @@ h1:hover{
 
 #thirdbackground{
     height: 300px;
-    background-color: #e0e0e0;
 }
 
 
@@ -150,8 +180,13 @@ h1:hover{
 
 #book{
     margin: auto;
-    padding-top: 130px;
+    padding-top: 110px;
     font-size:20px;
     text-align: center;
     width: 475px;
+    color:aliceblue;
+}
+
+#discover{
+    margin-left: 485px;
 }
