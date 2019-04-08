@@ -53,7 +53,17 @@
 	text-align: center;
 	font-size: 18px;
 	z-index: 2;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+	
 }
+
+.button:hover {
+	background-color: navajowhite; 
+	color: black;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
 .package-deal{
 	position:absolute;
 	left: 35%;
