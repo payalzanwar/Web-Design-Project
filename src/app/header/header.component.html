@@ -1,11 +1,11 @@
 <div class="header-container">
   <aside class="side-navigation">
-    <div class="context-menu">
+    <div class="context-menu" (click)="openSideNav()">
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
 
-        <div class="title-menu" (click)="open(content)">Menu</div>
+        <div class="title-menu">Menu</div>
     </div>  
   </aside>
 
@@ -14,9 +14,9 @@
     </div>
 
   <form class="form-inline my-2 my-lg-0">
-      <div *ngIf="this.userObject;else login">
+      <div *ngIf="this.userObject;else login" class="user-name">
           Welcome {{this.currentUser}}
-        <a (click)="logout()"><button class="btn btn-outline-success my-2 my-sm-0" type="button">Logout</button></a>
+        <a (click)="logout()"><button class="btn btn-outline-info my-2 my-sm-0" type="button">Logout</button></a>
       </div>
       <ng-template #login>
       <a [routerLink]="['/login']"><button class="btn btn-outline-info my-2 my-sm-0  mr-3" type="button">Login</button></a>
@@ -26,15 +26,15 @@
 </div>
 
 <ng-template #content let-c="close" let-d="dismiss">
-  <!-- <div class="modal-header">
+  <div class="modal-header">
       <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
       <span aria-hidden="true">&times;</span>
       </button> 
-  </div> -->
-  <div class="modal-body">
-      <p>Hello...</p>
   </div>
-  <div class="modal-footer">
-      <button type="button" class="btn btn-primary" (click)="d('Cross click')">OK</button>
+  <div class="modal-body">
+    <a class="row nav-link" [routerLink]="['/home']">Home</a>
+    <a class="row nav-link" [routerLink]="['/packages']">Packages</a>
+    <a class="row nav-link" [routerLink]="['/transportTypes']">Transport</a>
+    <a class="row nav-link" [routerLink]="['/accomodationlist']">Accomodation</a>
   </div>
 </ng-template>
