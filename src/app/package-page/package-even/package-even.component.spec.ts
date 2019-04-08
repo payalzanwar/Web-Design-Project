@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CardImageComponent } from './card-image.component';
+import { PackageEvenComponent } from './package-even.component';
 
-describe('CardImageComponent', () => {
-  let component: CardImageComponent;
-  let fixture: ComponentFixture<CardImageComponent>;
+describe('PackageEvenComponent', () => {
+  let component: PackageEvenComponent;
+  let fixture: ComponentFixture<PackageEvenComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CardImageComponent ]
+      declarations: [ PackageEvenComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CardImageComponent);
+    fixture = TestBed.createComponent(PackageEvenComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

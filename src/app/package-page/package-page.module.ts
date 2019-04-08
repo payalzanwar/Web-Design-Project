@@ -1,22 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardRowComponent } from './card-row/card-row.component';
-import { BookButtonComponent } from './book-button/book-button.component';
-import { CardDetailsComponent } from './card-details/card-details.component';
-import { CardPackageComponent } from './card-package/card-package.component';
-import { CardImageComponent } from './card-image/card-image.component';
+import { PackageOddComponent } from './package-odd/package-odd.component';
+import { PackageEvenComponent } from './package-even/package-even.component';
+import { ShowPackagesComponent } from './show-packages/show-packages.component';
 
 @NgModule({
-  declarations: [CardRowComponent, BookButtonComponent, CardDetailsComponent, CardPackageComponent, CardImageComponent],
+  declarations: [PackageOddComponent, PackageEvenComponent, ShowPackagesComponent],
   imports: [
     CommonModule
   ],
-  exports:[
-    CardPackageComponent,
-    CardRowComponent,
-    BookButtonComponent,
-    CardImageComponent,
-    CardDetailsComponent
+  exports: [
+    PackageOddComponent,
+    PackageEvenComponent,
+    ShowPackagesComponent
   ]
 })
 export class PackagePageModule { }

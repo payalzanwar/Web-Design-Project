@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { AboutUsModule } from './about-us/about-us.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderModule } from './header/header.module';
-import { PackagePageModule } from './package-page/package-page.module';
 import { FooterModule } from './footer/footer.module';
+import { PackagePageModule } from './package-page/package-page.module';
 
 @NgModule({
   declarations: [
@@ -19,8 +19,8 @@ import { FooterModule } from './footer/footer.module';
     AppRoutingModule,
     AboutUsModule,
     HeaderModule,
-    PackagePageModule,
     FooterModule,
+    PackagePageModule,
     NgbModule.forRoot()
   ],
   providers: [],
