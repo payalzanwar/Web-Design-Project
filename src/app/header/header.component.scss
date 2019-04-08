@@ -29,8 +29,8 @@
         transition: transform .5s;
         z-index: 2000;
         .line{
-            background-color: #000;
-            height: 2px;
+            background-color: #ffffff;
+            height: 4px;
             margin: 6px 0;
             width: 100%;
             -webkit-transition: -webkit-transform .5s,width .5s,opacity .5s;
@@ -49,8 +49,9 @@
         }
         
         .title-menu{
-            left: -278px;
-            height: 30px;
+            color: #ffffff;
+            left: -285px;
+            height: 10px;
             position: absolute;
             -webkit-transform: translate(20px, 0) rotate(-90deg);
             -moz-transform: translate(20px, 0) rotate(-90deg);
@@ -93,5 +94,8 @@
     form{
         position: fixed;
         right: 1rem;
+        .user-name{
+            color: white;
+        }
     }
 }

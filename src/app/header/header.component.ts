@@ -17,8 +17,8 @@ export class HeaderComponent implements OnInit {
 
   currentUser: string = '';
   constructor(private userService: UserService, private router: Router, private modalService: NgbModal, private modalConfig: NgbModalConfig) {
-    modalConfig.backdrop = 'static';
-    modalConfig.keyboard = false;
+    //modalConfig.backdrop = 'static';
+    //modalConfig.keyboard = false;
 
     this.userObject = this.userService.getLoggedInUser();
     console.log(this.userObject);
@@ -41,4 +41,18 @@ export class HeaderComponent implements OnInit {
     }
     
   }
+
+  openSideNav(){
+    this.modalService.open(this.templateref, {windowClass: 'sidenav-modal-class'});
+  }
+
+  navigateTo(url){
+    this.router.navigate(['/' + url]);
+  }
+
+  ngOnDestroy(){
+    
+    if(this.modalService !== null)  
+      this.modalService.dismissAll();
+   }
 }

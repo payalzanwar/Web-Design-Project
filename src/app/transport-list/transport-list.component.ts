@@ -9,12 +9,12 @@ import { TransportType } from './transporttype.model';
 export class TransportListComponent implements OnInit {
 
   transportTypes: TransportType[] = [
-    new TransportType('Rental Cars', 'Rental Cars', 'transportSites/rentalCars'),
-    new TransportType('Rail Travels', 'Rail Travels', 'transportSites/railTravels'),
+    new TransportType('Rental Cars', 'Rental Cars', '/transportSites/rentalCars'),
+    new TransportType('Rail Travels', 'Rail Travels', '/transportSites/railTravels'),
     new TransportType('Flights', 'Flights', 'transportSites/flights'),
-    new TransportType('Motorcycle Rentals', 'Motorcycle Rentals', 'transportSites/motorcyclerentals'),
-    new TransportType('Public Transport', 'Public Transport', 'transportSites/publictransportentalCars'),
-    new TransportType('Ferries & Cruise Ships', 'Ferries & Cruise Ships', 'transportSites/waterTaxies')
+    new TransportType('Motorcycle Rentals', 'Motorcycle Rentals', '/transportSites/motorcyclerentals'),
+    new TransportType('Public Transport', 'Public Transport', '/transportSites/publictransportentalCars'),
+    new TransportType('Ferries & Cruise Ships', 'Ferries & Cruise Ships', '/transportSites/waterTaxies')
   ];
 
   constructor() { }
