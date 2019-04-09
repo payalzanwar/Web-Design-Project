@@ -3,7 +3,7 @@
 	display:none;
 }
 .card-section{
-	height: 650px; 
+	height: 630px; 
 	position: relative;
 	
 }
@@ -32,7 +32,8 @@
 }
 .img-section{
 	height: 100%;
-
+	width: 100%;
+	padding: 0%;
 }
 .img{
 	float: left;

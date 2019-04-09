@@ -1,0 +1,103 @@
+/*  */
+.hide{
+	display:none;
+}
+.card-section{
+	height: 630px; 
+	position: relative;
+	
+}
+.card-title{
+	/*float: left;*/
+	/*size: 50%;*/
+	margin-top: 0%;
+	font-size: 1.8em;
+	font-family: Playfair Display;
+	font-weight: 800;
+	text-align: center;
+}
+.card-details{
+	float:left;
+	height: 100%;
+}
+.card-desc{
+	font-size: 0.9em;
+	text-align: center;
+	margin:0 10%;
+	font-family: Roboto;
+	color: #777777;
+}
+.card-desc>p{
+    text-align: justify;
+}
+.img-section{
+	height: 100%;
+	padding: 0%;
+
+}
+.img{
+	float: right;
+	vertical-align: middle;
+}
+.img-fluid1{
+	max-width: 100%;
+	height: 100%;
+}
+.transitionHori{
+	position: absolute;
+}
+.dummy{
+	color: aqua;
+}
+.button{
+	border:solid black 1px;
+	color:black;
+	position: absolute;
+	left: 45%;
+	top: 50%;
+	width: 10%;
+	text-align: center;
+	font-size: 18px;
+	z-index: 2;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+	
+}
+
+.button:hover {
+	background-color: navajowhite; 
+	color: black;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+.package-deal{
+	position:absolute;
+	left: 35%;
+	text-align: center;
+	font-family: Roboto;
+	color: black;
+	text-align: right;
+}
+.table{
+	margin-top: 0%;
+	position: relative;
+	left: 10%;
+	font-size: 0.85em;
+	width: 80%;
+	table-layout: fixed;
+	font-family: Roboto;
+	color: #777777;
+}
+.shadow{
+	box-shadow: 0 14px 18px 0 rgba(0,0,0,0.12),
+			0 12px 14px 0 rgba(0,0,0,0.08);
+	margin: 5% 0%;
+}
+
+.container{
+	position: relative;
+	width: 100%;
+}
+
+
+/*  */
