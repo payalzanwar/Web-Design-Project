@@ -1,9 +1,12 @@
 /*  */
+
+@media only screen and (min-width: 1150px){
+
 .hide{
 	display:none;
 }
 .card-section{
-	height: 630px; 
+	height: 650px; 
 	position: relative;
 	
 }
@@ -33,7 +36,6 @@
 .img-section{
 	height: 100%;
 	padding: 0%;
-
 }
 .img{
 	float: right;
@@ -80,10 +82,11 @@
 }
 .table{
 	margin-top: 0%;
+	margin-bottom: 2%;
+	margin-left: 0%;
 	position: relative;
-	left: 10%;
 	font-size: 0.85em;
-	width: 80%;
+	width: 100%;
 	table-layout: fixed;
 	font-family: Roboto;
 	color: #777777;
@@ -99,5 +102,5 @@
 	width: 100%;
 }
 
-
+}
 /*  */

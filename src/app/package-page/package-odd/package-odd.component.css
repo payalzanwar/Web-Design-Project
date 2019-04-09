@@ -1,9 +1,10 @@
 /*  */
+@media only screen and (min-width: 1150px){
 .hide{
 	display:none;
 }
 .card-section{
-	height: 630px; 
+	height: 650px; 
 	position: relative;
 	
 }
@@ -37,6 +38,10 @@
 }
 .img{
 	float: left;
+}
+.img-fluid1{
+	width: 100%;
+	height: 100%;
 }
 .transitionHori{
 	position: absolute;
@@ -74,14 +79,15 @@
 	text-align: right;
 }
 .table{
-    margin-top: 0%;
+	margin-top: 0%;
+	margin-bottom: 2%;
+	margin-left: 0%;
 	position: relative;
-	left: 10%;
 	font-size: 0.85em;
-    width: 80%;
-    table-layout: fixed;
-    font-family: Roboto;
-    color: #777777;
+	width: 100%;
+	table-layout: fixed;
+	font-family: Roboto;
+	color: #777777;
 }
 .shadow{
 	box-shadow: 0 14px 18px 0 rgba(0,0,0,0.12),
@@ -93,9 +99,6 @@
 	position: relative;
 	width: 100%;
 }
-.img-fluid1{
-	width: 100%;
-	height: 100%;
-}
 
+}
 /*  */
