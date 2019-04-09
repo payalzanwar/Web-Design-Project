@@ -1,6 +1,6 @@
 /*  */
 
-@media only screen and (min-width: 1150px){
+@media only screen and (min-width: 992px){
 
 .hide{
 	display:none;
@@ -29,6 +29,7 @@
 	margin:0 10%;
 	font-family: Roboto;
 	color: #777777;
+
 }
 .card-desc>p{
     text-align: justify;
@@ -36,10 +37,12 @@
 .img-section{
 	height: 100%;
 	padding: 0%;
+	
 }
 .img{
 	float: right;
 	vertical-align: middle;
+
 }
 .img-fluid1{
 	max-width: 100%;
@@ -63,12 +66,15 @@
 	z-index: 2;
   cursor: pointer;
   border-radius: 5px;
-  text-align: center;
+	text-align: center;
+	background-color: white; 
 	
 }
-
+.btn-section{
+	background-color: white; 
+}
 .button:hover {
-	background-color: navajowhite; 
+	background-color: white; 
 	color: black;
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   }
@@ -104,3 +110,67 @@
 
 }
 /*  */
+
+
+/*media screen less than 992px  */
+@media only screen and (max-width: 992px){
+	.card-section{
+		position: relative;
+		top:0px;
+		height: 736px;
+		padding: 0% 0%;
+		margin: 5% 0;
+		text-align: justify;
+		
+	}
+	.card-section,.card-title,.package-deal,.card-desc{
+		text-align: center;
+	}
+	.card-details{
+		position: absolute;
+		top: 0%;
+		height: 650px;
+		z-index: 1;
+	}
+	.img-section{
+		position: absolute;;
+		top: 0%;
+		bottom: 0%;
+		height: 650px;
+		width: 100%;
+		padding: 0%;
+		z-index: 0;
+	}
+	
+	.img-fluid1{
+		width: 100%;
+		height: 100%;
+		opacity: 0.6;
+	}
+	
+	.button{
+		position: relative;
+		width: 100%;
+		height: 100%;
+		background-color: white;
+		color: black;
+		border: 1px solid black;
+		font-size: 16px;
+		cursor: pointer;
+		border-radius: 5px;
+		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	}
+	
+	.btn-section{
+		margin-top: 10px;
+		position: relative;
+		left: 10%;
+		right: 10%;
+		min-width: 80%;
+		max-height: 30px;
+		top: 658px;
+		
+	 
+		
+	}
+	}
