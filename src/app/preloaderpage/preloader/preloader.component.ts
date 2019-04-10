@@ -22,7 +22,7 @@ export class PreloaderComponent implements OnInit {
     });
     setTimeout(() => {
       this.router.navigate(['/home']);
-  }, 4000);
+  }, 3000);
   }
 
 }

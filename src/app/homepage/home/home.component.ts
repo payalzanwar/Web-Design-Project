@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +9,17 @@ import * as $ from 'jquery';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     $(document).ready(function(){
       var $video = $('.backvideo');
       $video.show();
+    });
+
+    $("mutebtn").on("click", function(){
+      var bool = $("#audioback").prop("muted");
+        $("#audioback").prop("muted",!bool);
     });
   }
 
