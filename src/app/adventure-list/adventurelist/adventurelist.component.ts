@@ -11,9 +11,13 @@ export class AdventurelistComponent implements OnInit {
 
   constructor(private router: Router) { }
   
+
+
   ngOnInit() {
+    $(this).ready(function(){
+      $(this).scrollTop(0);
+      });
     $(window).scroll(function() {
-      
       if ($(this).scrollTop() <= 450) {
           $('#wrapper').addClass('colorOne')
           .removeClass('colorTwo');
