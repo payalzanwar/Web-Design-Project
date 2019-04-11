@@ -11,13 +11,13 @@
    
       {{this.package.title}} ({{this.package.price}})
     </h1>
-    <div class="package-deal">{{this.package.days}} days | 18+ | on Budget</div><br/>
+    <div class="package-deal">{{this.package.days}} days | on Budget</div><br/>
     <div class="card-desc">
       <p>{{this.package.desc}}</p><br/><br/>
       <table class="table">
         <tr>
-          <th>Cities</th>
-          <td>{{this.package.cities}}</td>
+            <th>Included</th>
+            <td>{{this.package.included}}</td>
         </tr>
         <tr>
           <th>Departure City</th>
@@ -36,8 +36,8 @@
           <td>{{this.package.dressCode}}</td>
         </tr>
         <tr>
-          <th>Included</th>
-          <td>{{this.package.included}}</td>
+            <th>Cities</th>
+            <td>{{this.package.cities}}</td>
         </tr>
         <tr>
           <th>Not Included</th>
@@ -50,4 +50,56 @@
     <img class="img img-fluid1" src="../../assets/banner-img.jpg" alt="">
   </div>
 </div>
+<div class="row card-section shadow"  *ngIf="i%2!=0" >   
+
+    <div class="btn-section" >
+      <button class="btn-default button">Book</button>
+    </div>
+  
+    <div class="col-lg-6 img-section" >
+      <img class="img img-fluid1" src="../../assets/banner-img.jpg" alt="">
+    </div>
+  
+    <div class="col-lg-6 card-details" >
+      
+      <h1 class="card-title">
+        {{this.package.title}} ({{this.package.price}})
+      </h1>
+      <div class="package-deal">{{this.package.days}} days |on Budget</div><br/>
+      <div class="card-desc">
+        <p>{{this.package.desc}}</p><br/>
+        <table class="table">
+          <tr>
+            <th>Included</th>
+            <td>{{this.package.included}}</td>
+          </tr>
+          <tr>
+            <th>Departure City</th>
+            <td>{{this.package.departureCity}}</td>
+          </tr>
+          <tr>
+            <th>Departure Time</th>
+            <td>{{this.package.departureTime}}</td>
+          </tr>
+          <tr>
+            <th>Return Time</th>
+            <td>{{this.package.returnTime}}</td>
+          </tr>
+          <tr>
+            <th>Dress Code</th>
+            <td>{{this.package.dressCode}}</td>
+          </tr>
+          <tr>
+            <th>Cities</th>
+            <td>{{this.package.cities}}</td>
+          </tr>
+          <tr>
+            <th>Not Included</th>
+            <td>{{this.package.notIncluded}}</td>
+          </tr>
+        </table>
+      </div>
+      
+    </div>
+  </div>
 </span>

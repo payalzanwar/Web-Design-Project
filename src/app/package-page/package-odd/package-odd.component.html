@@ -14,13 +14,13 @@
     <h1 class="card-title">
       {{this.package.title}} ({{this.package.price}})
     </h1>
-    <div class="package-deal">{{this.package.days}} days | 18+ | on Budget</div><br/>
+    <div class="package-deal">{{this.package.days}} days |on Budget</div><br/>
     <div class="card-desc">
       <p>{{this.package.desc}}</p><br/>
       <table class="table">
         <tr>
-          <th>Cities</th>
-          <td>{{this.package.cities}}}</td>
+          <th>Included</th>
+          <td>{{this.package.included}}</td>
         </tr>
         <tr>
           <th>Departure City</th>
@@ -28,7 +28,7 @@
         </tr>
         <tr>
           <th>Departure Time</th>
-          <td>{{this.package.departuteTime}}</td>
+          <td>{{this.package.departureTime}}</td>
         </tr>
         <tr>
           <th>Return Time</th>
@@ -39,8 +39,8 @@
           <td>{{this.package.dressCode}}</td>
         </tr>
         <tr>
-          <th>Included</th>
-          <td>{{this.package.included}}</td>
+          <th>Cities</th>
+          <td>{{this.package.cities}}</td>
         </tr>
         <tr>
           <th>Not Included</th>
