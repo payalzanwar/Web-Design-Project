@@ -1,3 +1,20 @@
+.parallax_one {
+	overflow: hidden;
+    min-height: 700px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.carouselimage{
+    display: block;
+    height: 750px;
+    max-width: 100%;
+    line-height: 1;
+    width: 100%;
+}
+
 #inparallax {
     opacity:0; 
     animation:fadeIn ease-in 1;
@@ -22,23 +39,6 @@
     to { opacity:1; } 
 }
 
-.parallax_one {
-	overflow: hidden;
-    min-height: 700px;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.carouselimage{
-    display: block;
-    height: 750px;
-    max-width: 100%;
-    line-height: 1;
-    width: 100%;
-}
-
 #parallax_two {
     background: url("/../assets/adventure9.jpg") no-repeat;
     opacity: 0.8;
@@ -61,7 +61,6 @@
 
 #parallax_four {
     background: url("/../assets/adventure12.jpg") no-repeat;
-    opacity: 0.8;
     min-height: 700px;
     background-position: center;
     background-repeat: no-repeat;
@@ -144,4 +143,272 @@ h1:hover{
 #trending, #book{
     font-family: 'Pacifico', cursive;
     font-size: 30px;
+}
+
+@media only screen and (max-width: 1025px){
+    
+    #inparallax{
+        left: 19%;
+    }
+    
+    h1{
+        font-size:65px;
+        text-align: center;
+    }
+
+    #introdiv{
+        display: block;
+        height: 380px;
+        width: 100%;
+    }
+
+    #intro{
+        position: absolute;
+        margin-left: 40px;
+        padding-top: 80px;
+        font-size:30px;
+        text-align: center;
+        width: 30%;
+        color: white;
+    }
+
+    #introimage {
+        position: absolute;
+        left: 37%;
+        width: 47%;
+        height: 100%;
+        background-size: 100%;
+    }
+
+    video{
+        height: 350px;
+    }
+
+    #book{
+        margin-left: 220px;
+    }
+
+    #discover{
+        margin-left: 390px; 
+    }
+
+    .card-title{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    
+    #inparallax{
+        left: 18%;
+    }
+    
+    h1{
+        font-size:50px;
+        text-align: center;
+
+    }
+
+    #introdiv{
+        display: block;
+        height: 290px;
+        width: 100%;
+    }
+
+    #intro{
+        position: absolute;
+        margin-left: 35px;
+        padding-top: 40px;
+        font-size:25px;
+        text-align: center;
+        width: 30%;
+        color: white;
+    }
+
+    #introimage {
+        position: absolute;
+        left: 37%;
+        width: 47%;
+        height: 100%;
+        background-size: 100%;
+    }
+
+    video{
+        height: 260px;
+    }
+
+    #trending{
+        margin-left: 25px;
+    }
+
+    #parallax_three{
+        min-height: 600px;
+    }
+
+    #book{
+        margin-left: 110px;
+    }
+
+    #discover{
+        margin-left: 270px; 
+    }
+
+    .card-title{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 414px){
+
+    #inparallax{
+        left: 18%;
+    }
+    
+    h1{
+        font-size:28px;
+        text-align: center;
+
+    }
+
+    #introdiv{
+        display: block;
+        height: 290px;
+        width: 100%;
+    }
+
+    #intro{
+        position: absolute;
+        margin-left: 40px;
+        padding: 0px;
+        font-size:16px;
+        text-align: center;
+        width: 80%;
+        color: white;
+    }
+
+    #introimage {
+        position: absolute;
+        left: 3%;
+        width: 47%;
+        height: 100%;
+        background-size: 100%;
+    }
+
+    video{
+        position: absolute;
+        top: 11%;
+        left: 14%;
+        height: 190px;
+    }
+
+    #trending{
+        margin-left: 0px;
+        margin-bottom: 0px;
+        font-size: 23px;
+    }
+
+    #parallax_three{
+        min-height: 600px;
+    }
+
+    #thirdbackground{
+        height: 200px;
+    }
+
+    #book{
+        text-align: center;
+        padding-top: 40px;
+        margin: 0 0 0 70px;
+        font-size: 18px;
+        width: 250px;
+    }
+
+    #discover{
+        margin-left: 120px; 
+    }
+
+    .card{
+        margin-bottom: 15px;
+    }
+    .card-title{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 376px){
+
+    #inparallax{
+        left: 18%;
+    }
+    
+    h1{
+        font-size:25px;
+        text-align: center;
+
+    }
+
+    #introdiv{
+        display: block;
+        height: 290px;
+        width: 100%;
+    }
+
+    #intro{
+        position: absolute;
+        margin-left: 40px;
+        padding: 0px;
+        font-size:16px;
+        text-align: center;
+        width: 80%;
+        color: white;
+    }
+
+    #introimage {
+        position: absolute;
+        left: 3%;
+        width: 47%;
+        height: 100%;
+        background-size: 100%;
+    }
+
+    video{
+        position: absolute;
+        top: 12%;
+        left: 5%;
+        height: 190px;
+    }
+
+    #trending{
+        margin-left: 0px;
+        margin-bottom: 0px;
+        font-size: 23px;
+    }
+
+    #parallax_three{
+        min-height: 600px;
+    }
+
+    #thirdbackground{
+        height: 200px;
+    }
+
+    #book{
+        text-align: center;
+        padding-top: 40px;
+        margin: 0 0 0 50px;
+        font-size: 18px;
+        width: 250px;
+    }
+
+    #discover{
+        margin-left: 125px;
+        font-size: 10px; 
+    }
+
+    .card{
+        margin-bottom: 15px;
+    }
+    .card-title{
+        font-size: 20px;
+    }
 }
