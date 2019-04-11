@@ -17,7 +17,7 @@ export class PackageService {
   }
 
   savePackage(PackageData: any){
-    localStorage.setItem('PackageData', JSON.stringify(PackageData.package[0]));
+    localStorage.setItem('PackageData', JSON.stringify(PackageData.package));
   }
 
   getsavedPackage(){

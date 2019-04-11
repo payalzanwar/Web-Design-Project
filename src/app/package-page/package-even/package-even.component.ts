@@ -43,29 +43,9 @@ export class PackageEvenComponent implements OnInit {
     });
   
     this.packageObject = this.PackageService.getsavedPackage();
-    console.log(this.packageObject);
-    if(this.packageObject){
-    
-        this.title = this.packageObject.title;
-        this.price= this.packageObject.price;
-        this.desc=this.packageObject.desc;
-        this.cities=this.packageObject.cities;
-        this.departureCity=this.packageObject.departureCity;
-        this.departuteTime=this.packageObject.departuteTime;
-        this.returnTime=this.packageObject.returnTime;
-        this.dressCode=this.packageObject.dressCode;
-        this.included=this.packageObject.included;
-        this.notIncluded=this.packageObject.notIncluded;
-        this.days=this.packageObject.days;
-      
-     
-    }
+   
   
    }
-
-  // packages = this.packageObject;
-  
-
   ngOnInit() {
   }
 

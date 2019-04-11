@@ -1,46 +1,47 @@
-<div class="row card-section shadow" >
+<span *ngFor= "let package of this.packageObject; let i = index">
+<div class="row card-section shadow"  *ngIf="i%2==0">
 
   <div class="btn-section">
     <button class="btn-default button">Book</button>
   </div>
 
-  <div class="col-lg-6 card-details">
+  <div class="col-lg-6 card-details" >
     
     <h1 class="card-title">
    
-      {{this.title}} ({{this.price}})
+      {{this.package.title}} ({{this.package.price}})
     </h1>
-    <div class="package-deal">{{this.days}} days | 18+ | on Budget</div><br/>
+    <div class="package-deal">{{this.package.days}} days | 18+ | on Budget</div><br/>
     <div class="card-desc">
-      <p>{{this.desc}}</p><br/><br/>
+      <p>{{this.package.desc}}</p><br/><br/>
       <table class="table">
         <tr>
           <th>Cities</th>
-          <td>{{this.cities}}</td>
+          <td>{{this.package.cities}}</td>
         </tr>
         <tr>
           <th>Departure City</th>
-          <td>{{this.departureCity}}</td>
+          <td>{{this.package.departureCity}}</td>
         </tr>
         <tr>
           <th>Departure Time</th>
-          <td>{{this.departuteTime}}</td>
+          <td>{{this.package.departureTime}}</td>
         </tr>
         <tr>
           <th>Return Time</th>
-          <td>{{this.returnTime}}</td>
+          <td>{{this.package.returnTime}}</td>
         </tr>
         <tr>
           <th>Dress Code</th>
-          <td>{{this.dressCode}}</td>
+          <td>{{this.package.dressCode}}</td>
         </tr>
         <tr>
           <th>Included</th>
-          <td>{{this.included}}</td>
+          <td>{{this.package.included}}</td>
         </tr>
         <tr>
           <th>Not Included</th>
-          <td>{{this.notIncluded}}</td>
+          <td>{{this.package.notIncluded}}</td>
         </tr>
       </table>
     </div>
@@ -49,3 +50,4 @@
     <img class="img img-fluid1" src="../../assets/banner-img.jpg" alt="">
   </div>
 </div>
+</span>
