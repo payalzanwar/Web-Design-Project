@@ -10,8 +10,6 @@ import { Router } from '@angular/router'
 export class AdventurelistComponent implements OnInit {
 
   constructor(private router: Router) { }
-  
-
 
   ngOnInit() {
     $(this).ready(function(){
@@ -24,7 +22,7 @@ export class AdventurelistComponent implements OnInit {
       } else if ($(this).scrollTop() <= 1100) {
           $('#wrapper').addClass('colorTwo')
           .removeClass('colorThree');
-      } else if ($(this).scrollTop() <= 1900) {
+      } else if ($(this).scrollTop() <= 1720) {
           $('#wrapper').addClass('colorThree')
           .removeClass('colorFour');
       } else if ($(this).scrollTop() <=2300) {
@@ -33,5 +31,4 @@ export class AdventurelistComponent implements OnInit {
       } 
   });
   }
-
 }

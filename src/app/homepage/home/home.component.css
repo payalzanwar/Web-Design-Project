@@ -1,7 +1,3 @@
-body{
-    /* background: url("/../assets/adventure1.jpg") no-repeat; */
-}
-
 #inparallax {
     opacity:0; 
     animation:fadeIn ease-in 1;
@@ -19,7 +15,6 @@ body{
     width: 500px;
     margin-right: 0;
     width: 475px;
-
 }
 
 @keyframes fadeIn { 
@@ -28,12 +23,8 @@ body{
 }
 
 .parallax_one {
-    /* The image used */
-    /* background: url("/../assets/adventure8.jpg") no-repeat; */
-    /* Set a specific height */
 	overflow: hidden;
     min-height: 700px;
-    /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -49,12 +40,9 @@ body{
 }
 
 #parallax_two {
-    /* The image used */
     background: url("/../assets/adventure9.jpg") no-repeat;
     opacity: 0.8;
-    /* Set a specific height */
     min-height: 600px;
-    /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -62,12 +50,9 @@ body{
 }
 
 #parallax_three {
-    /* The image used */
     background: url("/../assets/adventure7.jpg") no-repeat;
     opacity: 0.8;
-    /* Set a specific height */
     min-height: 700px;
-    /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -75,13 +60,9 @@ body{
 }
 
 #parallax_four {
-    /* The image used */
     background: url("/../assets/adventure12.jpg") no-repeat;
-    /* opacity: 0.8; */
-    /* Set a specific height */
+    opacity: 0.8;
     min-height: 700px;
-    /* Create the parallax scrolling effect */
-    /* background-attachment: fixed; */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -97,7 +78,6 @@ body{
 }
 
 h1{
-    /* position: absolute; */
     color: white;
     font-size: 90px;
     /* animation: 2s ease-out 0s 1 slideInFromLeft; */
@@ -112,7 +92,6 @@ h1:hover{
 
 #introdiv{
     display: block;
-    /* position: absolute; */
     height: 500px;
     width: 100%;
 }
@@ -134,34 +113,12 @@ h1:hover{
     left: 43%;
     width: 47%;
     height: 100%;
-    /* background-color: aqua; */
-    /* background: url("/../assets/adventure1.jpg") no-repeat; */
     background-size: 100%;
 }
 
 #cardintro {
     float: right;
-    /* position: absolute; */
-    /* left: 63%; */
-    /* width: 47%; */
-    /* height: 100%; */
 }
-
-
-/* #introimage:hover{
-    transform: translate(-50px, 100px);
-    transition: transform 1s;
-} */
-
-/* #intro:hover{
-    transform: translate(50px, 100px);
-    transition: transform 1s;
-} */
-
-/* #introtext{
-    width: 500px;
-    margin-right: 0;
-} */
 
 #firstbackground {
     height: 300px;

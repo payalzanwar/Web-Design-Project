@@ -1,0 +1,6 @@
+#maindiv{
+    height: 800px;
+    z-index: 1;
+    position: relative;
+    margin-left: 640px;
+}

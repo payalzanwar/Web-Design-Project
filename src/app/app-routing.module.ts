@@ -5,7 +5,8 @@ import { AdventurelistComponent } from './adventure-list/adventurelist/adventure
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
-  {path: 'adlist', component: AdventurelistComponent}
+  {path: 'adlist', component: AdventurelistComponent},
+  {path: 'scuba', component: AdventurelistComponent}
 ];
 
 @NgModule({

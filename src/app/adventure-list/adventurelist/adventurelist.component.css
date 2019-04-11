@@ -33,6 +33,7 @@ h2{
 }
 
 #boston, #cal1, #cal2, #cal4, #cal5{
+    padding-top: 200px;
     height: 800px;
     z-index: 1;
     position: relative;
@@ -51,13 +52,13 @@ h2{
     color: aliceblue;
 }
 
-#boston{
+/* #boston{
     padding-top: 200px;
     height: 1000px;
-}
+} */
 
 
-  .colorOne, .colorFive{
+  .colorOne{
     background-image: url("../../../assets/boston.jpg");
     opacity: 0.5;
   }
