@@ -14,6 +14,7 @@ export class PackageEvenComponent implements OnInit {
   // model: any = {};
 
      title: string ='';
+     img:any={data:'',contentType:'',name:''};
      price: string='';
      desc: string='';
      cities: string='';

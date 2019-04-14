@@ -47,7 +47,8 @@
     </div>
   </div>
   <div class="col-lg-6 img-section">
-    <img class="img img-fluid1" src="../../assets/banner-img.jpg" alt="">
+    <!-- <img class="img img-fluid1" src="../../assets/banner-img.jpg" alt=""> -->
+    {{this.package.img}}
   </div>
 </div>
 <div class="row card-section shadow"  *ngIf="i%2!=0" >   
@@ -57,7 +58,9 @@
     </div>
   
     <div class="col-lg-6 img-section" >
-      <img class="img img-fluid1" src="../../assets/banner-img.jpg" alt="">
+        {{this.package.img}}
+      <!-- <img class="img img-fluid1" src={{this.package.img}} alt=""> -->
+      <!-- <img class="img img-fluid1" src="../../assets/banner-img.jpg" alt=""> -->
     </div>
   
     <div class="col-lg-6 card-details" >

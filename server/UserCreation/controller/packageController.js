@@ -27,6 +27,7 @@ const Package = require('../model/package');
 // };
 
 exports.getPackage = (req,res) => {
+   
     Package.find({},function (err,package){
         if(err)
         res.status(400).send({message : 'Bad Request (Package not found)'});
