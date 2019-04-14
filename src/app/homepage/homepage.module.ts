@@ -3,20 +3,20 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
-import { FooterModule } from '../footer/footer.module'
-import { FooterComponent } from '../footer/footer/footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from '../material/material.module';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    FooterComponent
   ],
   imports: [
     CommonModule,
     NgbModule,
     RouterModule,
-    FooterModule
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   exports: [
     HomeComponent

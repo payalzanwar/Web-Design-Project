@@ -1,0 +1,12 @@
+<div id="wrapper">  
+</div>
+
+<div>
+  <mat-form-field id="pickadate">
+    <input matInput [matDatepicker]= "myDatePicker" placeholder="Choose a Date">
+    <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
+    <mat-datepicker #myDatePicker></mat-datepicker>
+  </mat-form-field>
+</div>
+
+
