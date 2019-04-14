@@ -8,12 +8,14 @@ import { PreloaderpageModule } from './preloaderpage/preloaderpage.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AdventurelistComponent } from './adventure-list/adventurelist/adventurelist.component';
 import { FooterModule } from './footer/footer.module';
+import { AdventureComponent } from './adventure-list/adventure/adventure.component';
 // import { FooterComponent } from './footer/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdventurelistComponent,
+    AdventureComponent
     // FooterComponent
   ],
   imports: [
