@@ -1,4 +1,4 @@
-const Package = require('../model/package');
+const Package = require('../Schema/PackageSchema');
 
 // exports.create = (req,res) => {
 //     console.log(req.body.userName);
