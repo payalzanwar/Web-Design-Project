@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { NgSrcModule } from 'ng-src';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
@@ -17,6 +18,7 @@ import { PackagePageModule } from './package-page/package-page.module';
   imports: [
     BrowserModule,
     FormsModule,
+    NgSrcModule,
     HttpClientModule,
     AppRoutingModule,
     AboutUsModule,

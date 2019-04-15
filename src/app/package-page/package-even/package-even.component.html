@@ -1,5 +1,5 @@
 <span *ngFor= "let package of this.packageObject; let i = index">
-<div class="row card-section shadow"  *ngIf="i%2==0">
+<div class="row card-section shadow"  *ngIf="i==3">
 
   <div class="btn-section">
     <button class="btn-default button">Book</button>
@@ -48,20 +48,25 @@
   </div>
   <div class="col-lg-6 img-section">
     <!-- <img class="img img-fluid1" src="../../assets/banner-img.jpg" alt=""> -->
-    {{this.package.img}}
+    <!-- {{this.package.img.data.data}} -->
+    <!-- <img [src]="_DomSanitizer.bypassSecurityTrustUrl('data:image/jpeg;base64,'+this.package.img.data.data)" /> -->
+    <img ng-src="data:image/jpeg;base64, this.package.img.data.data">
+    <!-- <img src="{{this.package.img.data.data}}"> -->
+
   </div>
 </div>
-<div class="row card-section shadow"  *ngIf="i%2!=0" >   
+<!-- <div class="row card-section shadow"  *ngIf="i%2!=0" >   
 
     <div class="btn-section" >
       <button class="btn-default button">Book</button>
     </div>
   
     <div class="col-lg-6 img-section" >
-        {{this.package.img}}
+         <img src="{{'contentType:image/jpeg;charset=utf-8;base64,' + this.package.img.data.data}}"> -->
+        <!-- {{this.package.img.data}} -->
       <!-- <img class="img img-fluid1" src={{this.package.img}} alt=""> -->
       <!-- <img class="img img-fluid1" src="../../assets/banner-img.jpg" alt=""> -->
-    </div>
+    <!-- </div>
   
     <div class="col-lg-6 card-details" >
       
@@ -105,4 +110,4 @@
       
     </div>
   </div>
-</span>
+</span> --> 

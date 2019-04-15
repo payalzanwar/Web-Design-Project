@@ -17,7 +17,10 @@ notIncluded:'DepartureTaxes,Breakfast',
 days:'4'
 });
 
-Pckg.img.data = fs.readFileSync(imgPath);
+
+// var bitmap=fs.readFileSync(imgPath);
+// Pckg.img.data = new Buffer(bitmap).toString('base64');
+Pckg.img.data=fs.readFileSync(imgPath);
 Pckg.img.contentType = 'image/jpeg';
 Pckg.img.name ='group-adventure';
 

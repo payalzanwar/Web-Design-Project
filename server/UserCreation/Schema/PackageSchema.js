@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 
 
 const Package = mongoose.Schema({
+    idProduct: {
+        type: mongoose.Schema.Types.ObjectId,
+        index: true
+    },
     title: String,
      price: String,
      desc: String,

@@ -1,6 +1,8 @@
 import { Component, OnInit ,TemplateRef,ViewChild} from '@angular/core';
 import { PackageService } from '../../Service/package.service';
 import { NgForOf } from '@angular/common';
+import { DomSanitizer } from '@angular/platform-browser';
+import { NgSrcModule } from 'ng-src';
 @Component({
   selector: 'app-package-even',
   templateUrl: './package-even.component.html',
@@ -9,26 +11,14 @@ import { NgForOf } from '@angular/common';
 export class PackageEvenComponent implements OnInit {
 
   @ViewChild('content') public templateref: TemplateRef<any>;
-
+ 
   errorMsg: string = 'Unable to connect to server';
-  // model: any = {};
-
-     title: string ='';
-     img:any={data:'',contentType:'',name:''};
-     price: string='';
-     desc: string='';
-     cities: string='';
-     departureCity: string='';
-     departuteTime: string='';
-     returnTime: string='';
-     dressCode: string='';
-     included: string='';
-     notIncluded: string='';
-     days: string='';
-
+  
+  ImgUrl: any = {};
 
   packageObject: any = {};
-  constructor(private PackageService: PackageService) {
+  
+  constructor(private PackageService: PackageService,public _DomSanitizer: DomSanitizer) {
    
     // this.packageObject = this.PackageService.getPackageList();
     // alert(this.packageObject.title);
@@ -45,8 +35,12 @@ export class PackageEvenComponent implements OnInit {
   
     this.packageObject = this.PackageService.getsavedPackage();
    
+   
+
   
+    //console.log(this.packageObject[3].img.data.data);
    }
+  
   ngOnInit() {
   }
 
