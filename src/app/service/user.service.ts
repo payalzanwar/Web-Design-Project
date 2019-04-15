@@ -13,8 +13,8 @@ export class UserService {
   create(user: User) {
     return this.http.post(this.serverUrl + '/user' , user );
   }
-  checkUserExist(userName: string, password: string){
-    return this.http.get(this.serverUrl + '/user/userName=' + userName + '/password=' + password);
+  checkUserExist(email: string, password: string){
+    return this.http.get(this.serverUrl + '/user/email=' + email + '/password=' + password);
   }
   saveLoggedInUser(userData: any){
     localStorage.setItem('userData', JSON.stringify(userData.user));

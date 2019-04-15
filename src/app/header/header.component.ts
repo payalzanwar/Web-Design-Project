@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
     //modalConfig.keyboard = false;
 
     this.userObject = this.userService.getLoggedInUser();
-    console.log(this.userObject);
+    
     if(this.userObject)
       this.currentUser = this.userObject.firstName + ' ' + this.userObject.lastName;
   }
