@@ -17,6 +17,7 @@ export class PackageService {
   }
 
   savePackage(PackageData: any){
+    console.log("PackageData length"+PackageData.length);
     localStorage.setItem('PackageData', JSON.stringify(PackageData.package));
   }
 

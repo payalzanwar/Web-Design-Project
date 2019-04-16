@@ -34,15 +34,7 @@ exports.getPackage = (req,res) => {
         res.status(400).send({message : 'Bad Request (Package not found)'});
     
         if(package){
-            //console.log(package[0].imgPath);
-            // package.forEach(function(pkg){
-            //     var bitmap = fs.readFileSync(pkg.imgPath);
-            //     var encode_image = bitmap.toString('base64');
-            //     pkg.imgPath=new Buffer(encode_image).toString('base64');
-         
-            // });
-         
-        //  console.log(package);
+        
             res.send({package:package});
         
         }

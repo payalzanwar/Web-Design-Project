@@ -34,7 +34,7 @@ export class PackageEvenComponent implements OnInit {
     });
   
     this.packageObject = this.PackageService.getsavedPackage();
-   
+   console.log(this.packageObject.length);
    
 
   
