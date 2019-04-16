@@ -13,7 +13,10 @@ const Package = mongoose.Schema({
      dressCode: String,
      included: String,
      notIncluded: String,
-     imgPath :String,
+     img: { 
+        data: Buffer,
+        contentType: String 
+    },
      days: String
 });
 module.exports = mongoose.model('Package', Package);

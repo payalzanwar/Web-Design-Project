@@ -12,7 +12,7 @@ exports.create = (req,res) => {
         dressCode: req.body.dressCode,
         included : req.body.included,
         notIncluded: req.body.notIncluded,
-        imgPath : req.body.imgPath,
+        img: { data: fs.readFileSync(req.body.img.data), contentType: req.body.img.contentType},
         days: req.body.days
     });
     if(Pkg){
@@ -35,11 +35,12 @@ exports.getPackage = (req,res) => {
     
         if(package){
             //console.log(package[0].imgPath);
-            package.forEach(function(pkg){
-                var bitmap = fs.readFileSync(pkg.imgPath);
-                var encode_image = bitmap.toString('base64');
-                pkg.imgPath=new Buffer(encode_image).toString('base64');
-            });
+            // package.forEach(function(pkg){
+            //     var bitmap = fs.readFileSync(pkg.imgPath);
+            //     var encode_image = bitmap.toString('base64');
+            //     pkg.imgPath=new Buffer(encode_image).toString('base64');
+         
+            // });
          
         //  console.log(package);
             res.send({package:package});

@@ -41,6 +41,15 @@ export class PackageEvenComponent implements OnInit {
     //console.log(this.packageObject[3].img.data.data);
    }
   
+   getImgData(img){
+    var binary = '';
+    var bytes = new Uint8Array( img.data.data );
+    var len = bytes.byteLength;
+    for (var i = 0; i < len; i++) {
+      binary += String.fromCharCode( bytes[ i ] );
+    }
+    return 'data:image/png;base64,' + window.btoa( binary );
+  }
   ngOnInit() {
   }
 
