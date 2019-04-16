@@ -6,17 +6,13 @@ import { AppComponent } from './app.component';
 import { HomepageModule } from './homepage/homepage.module';
 import { PreloaderpageModule } from './preloaderpage/preloaderpage.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AdventurelistComponent } from './adventure-list/adventurelist/adventurelist.component';
-import { FooterModule } from './footer/footer.module';
-import { AdventureComponent } from './adventure-list/adventure/adventure.component';
-// import { FooterComponent } from './footer/footer/footer.component';
+import { AdventureListModule } from './adventure-list/adventure-list.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdventurelistComponent,
-    AdventureComponent
-    // FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +20,8 @@ import { AdventureComponent } from './adventure-list/adventure/adventure.compone
     HomepageModule,
     PreloaderpageModule,
     NgbModule,
-    FooterModule
+    AdventureListModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
