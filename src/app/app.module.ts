@@ -14,6 +14,7 @@ import { TransportListComponent } from './transport-list/transport-list.componen
 import { TransportSitesComponent } from './transport-list/transport-sites/transport-sites.component';
 import { PreloaderPageComponent } from './preloader-page/preloader-page.component';
 import { FooterComponent } from './footer/footer.component';
+import { AccomodationComponent } from './accomodation/accomodation.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { FooterComponent } from './footer/footer.component';
     TransportListComponent,
     TransportSitesComponent,
     PreloaderPageComponent,
-    FooterComponent
+    FooterComponent,
+    AccomodationComponent
 
   ],
   imports: [
