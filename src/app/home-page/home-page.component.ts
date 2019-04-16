@@ -16,6 +16,10 @@ export class HomePageComponent implements OnInit {
       var $video = $('.backvideo');
       $video.show();
     });
+    $("mutebtn").on("click", function(){
+      var bool = $("#audioback").prop("muted");
+        $("#audioback").prop("muted",!bool);
+    });
   }
 
 }

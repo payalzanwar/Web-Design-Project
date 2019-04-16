@@ -15,7 +15,10 @@ import { TransportSitesComponent } from './transport-list/transport-sites/transp
 import { PreloaderPageComponent } from './preloader-page/preloader-page.component';
 import { FooterComponent } from './footer/footer.component';
 import { AccomodationComponent } from './accomodation/accomodation.component';
-
+import { AdventureListComponent } from './adventure-list/adventure-list.component';
+import { BooknowComponent } from './booknow/booknow.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MatInputModule, MatTableModule, MatSortModule, MatPaginatorModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import { AccomodationComponent } from './accomodation/accomodation.component';
     TransportSitesComponent,
     PreloaderPageComponent,
     FooterComponent,
-    AccomodationComponent
+    AccomodationComponent,
+    AdventureListComponent,
+    BooknowComponent
 
   ],
   imports: [
@@ -37,7 +42,16 @@ import { AccomodationComponent } from './accomodation/accomodation.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule
   ],
   exports: [
     HeaderComponent
