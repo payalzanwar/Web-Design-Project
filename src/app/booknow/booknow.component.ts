@@ -14,8 +14,6 @@ const ELEMENT_DATA: BookingElement[] = [
   {date: 3, time: 'H', available: 6, price: 1, booknow: 2},
   {date: 4, time: 'H', available: 9, price: 1, booknow: 2},
   {date: 5, time: 'H', available: 1, price: 1, booknow: 2},
-  {date: 6, time: 'H', available: 1, price: 1, booknow: 2},
-  {date: 7, time: 'H', available: 1, price: 1, booknow: 2}
 
 ];
 

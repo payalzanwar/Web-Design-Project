@@ -19,6 +19,8 @@ import { AdventureListComponent } from './adventure-list/adventure-list.componen
 import { BooknowComponent } from './booknow/booknow.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MatInputModule, MatTableModule, MatSortModule, MatPaginatorModule } from '@angular/material';
+import { PackageEvenComponent } from './package-even/package-even.component';
+// import { PackagePageModule } from './package-page/package-page.module';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { MatButtonModule, MatDatepickerModule, MatNativeDateModule, MatFormField
     FooterComponent,
     AccomodationComponent,
     AdventureListComponent,
-    BooknowComponent
+    BooknowComponent,
+    PackageEvenComponent,
 
   ],
   imports: [
@@ -51,7 +54,8 @@ import { MatButtonModule, MatDatepickerModule, MatNativeDateModule, MatFormField
     MatInputModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    // PackagePageModule
   ],
   exports: [
     HeaderComponent
