@@ -16,12 +16,5 @@ export class PackageService {
     return this.http.get(this.serverUrl + '/packagelist');
   }
 
-  savePackage(PackageData: any){
-    console.log("PackageData length"+PackageData.length);
-    localStorage.setItem('PackageData', JSON.stringify(PackageData.package));
-  }
-
-  getsavedPackage(){
-    return JSON.parse(localStorage.getItem('PackageData'));
-  }
+ 
 }

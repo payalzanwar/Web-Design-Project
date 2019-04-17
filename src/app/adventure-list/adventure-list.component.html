@@ -1,23 +1,24 @@
 <app-header></app-header>
+<span  *ngFor="let adventure of this.adventureObject;">
 <div id="wrapper">
-  <h1>BUNGEE JUMPING</h1>
+  <h1>{{this.adventureType}}</h1>
 </div>
 
 <div id="maindiv" >
-<h2><b>TITLE</b></h2>
-<p class="details"><b>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum, dolor porro? Aspernatur unde perferendis voluptate similique iusto aliquid, velit id, adipisci necessitatibus vel harum blanditiis porro rem. Ex, debitis dolorum.</b></p>
+<h2><b>{{adventure.title}}</b></h2>
+<p class="details"><b>{{adventure.desc}}</b></p>
 <table style="color:aliceblue;">
     <tr>
         <th>Age Group |</th>
-        <td> 18+</td>
+        <td> {{adventure.age}}</td>
     </tr>
     <tr>
         <th>Price/ person |</th>
-        <td> $100</td>
+        <td> {{adventure.price}}</td>
     </tr>
     <tr>
         <th>Availability |</th>
-        <td>10:00 AM to 4:00 PM EST</td>
+        <td>{{adventure.Availability}}</td>
     </tr>
 </table>
 <br>
@@ -26,4 +27,5 @@
 <a [routerLink]="['/booknow']"><button class="btns" mat-raised-button>Transport</button></a>
 <a [routerLink]="['/booknow']"><button class="btns" mat-raised-button>Book Now</button></a>
 </div>
+</span>
 <app-footer></app-footer>

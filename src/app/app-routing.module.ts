@@ -11,7 +11,7 @@ import { AuthenticationService as AuthGuard } from './service/authentication.ser
 import { AccomodationComponent } from './accomodation/accomodation.component';
 import { AdventureListComponent } from './adventure-list/adventure-list.component';
 import { BooknowComponent } from './booknow/booknow.component';
-import { ShowPackagesComponent } from './package-page/show-packages/show-packages.component';
+// import { ShowPackagesComponent } from './package-page/show-packages/show-packages.component';
 import { PackageEvenComponent } from './package-even/package-even.component';
 
 const routes: Routes = [
@@ -22,7 +22,10 @@ const routes: Routes = [
   {path:'accomodation', component: AccomodationComponent, canActivate: [AuthGuard]},
   {path:'signup', component: SignupPageComponent},
   {path:'login', component: LoginPageComponent},
-  {path: 'scuba', component: AdventureListComponent},
+  {path: 'Scuba', component: AdventureListComponent},
+  {path: 'RiverRafting', component: AdventureListComponent},
+  {path: 'Paragliding', component: AdventureListComponent},
+  {path: 'BungeeJumping', component: AdventureListComponent},
   {path: 'booknow', component: BooknowComponent},
   {path:'packagelist',component: PackageEvenComponent},
 

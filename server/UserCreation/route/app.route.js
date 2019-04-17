@@ -3,7 +3,8 @@ module.exports = (app) => {
     const package = require('../controller/packageController');
     const transportSiteController = require('../controller/transportSitesController');
     const accomodationSitesCtrl = require('../controller/accomodationSitesController');    
-
+    const adventures = require('../controller/adventureController');
+    
     app.post('/user',user.create);
     app.get('/user/:userName/:password',user.getUser);
     app.delete('/user/:userName',user.delete);
@@ -16,4 +17,8 @@ module.exports = (app) => {
 
     app.get('/accomodationSites', accomodationSitesCtrl.getSites);
     app.post('/accomodationSite/create', accomodationSitesCtrl.addSites);
+
+    app.get('/adventures/:adventureType', adventures.getAdvList);
+    app.post('/adventure/create', adventures.createadv);
+
 }
