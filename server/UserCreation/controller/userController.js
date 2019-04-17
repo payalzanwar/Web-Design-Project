@@ -1,47 +1,63 @@
 const User = require('../model/user');
+const bcrypt = require('bcrypt');
 
 exports.create = (req,res) => {
-    console.log(req.body.userName);
+    console.log(req.body.email);
     const data = {
-        userName: req.body.userName
+        email: req.body.email
     };
     User.findOne(data, (error, user) => {
-        console.log("USer"+user);
         if(user){
-            // res.status(401).send({'message':'User exists already with this UserName / Email'});
-          // res.status(401).send({'message':user.userName}); 
+            res.status(401).send({'message':'User exists already with this Email Id'});
+            
         }else{
-            const user = new User({
-                userName : req.body.userName,
-                password : req.body.password,
-                firstName : req.body.firstName,
-                lastName : req.body.lastName
+
+            bcrypt.genSalt(10, function(err, salt) {
+                bcrypt.hash(req.body.password, salt, function(err, hash) {
+                    
+                    const user = new User({
+                        email : req.body.email,
+                        password : hash,
+                        firstName : req.body.firstName,
+                        lastName : req.body.lastName
+                    });
+
+                    user.save().then(() => {
+                        res.send({'message':'User created successfully'});
+                    }, () => {
+                        console.log('Error while creating user');
+                    });
+                });
             });
-        
-            user.save().then(() => {
-                res.status(200).send({'message':'Payal'});
-            });
+
         }
     })
     
 };
 
 exports.getUser = (req,res) => {
-    const data = {
-        userName: req.params.userName.split("=")[1],
-        password: req.params.password.split("=")[1]
-    };
-    User.findOne(data,(error,user) => {
+    const email = req.params.email.split("=")[1];
+    const password = req.params.password.split("=")[1];
+    
+    User.findOne({email: email}, (error,user) => {
         if(!user || error){
-            res.status(401).send({'message':'Invalid Username/Password'});
+            res.status(401).send({'message':'Invalid Email Id'});
         }else{
-            res.send({'user':user});
+            bcrypt.compare(password, user.password, function(err, result) {
+                if(!result || err){
+                    res.status(401).send({'message':'Invalid Password'});
+                }else{
+                    res.send({'user':user});
+                }
+            });
         }
+        
+        
     })
 };
 
 exports.delete = (req,res) => {
-    User.findOneAndRemove(req.params.userName).
+    User.findOneAndRemove(req.params.email).
     then(user => {
         res.send({'message':'user deleted successfully'});
     }); 
