@@ -14,6 +14,7 @@ import { BooknowComponent } from './booknow/booknow.component';
 // import { ShowPackagesComponent } from './package-page/show-packages/show-packages.component';
 import { PackageEvenComponent } from './package-even/package-even.component';
 import { ShoppingCartPackageComponent } from './shopping-cart-package/shopping-cart-package.component';
+import { ShoppingCartPageComponent } from './shopping-cart-page/shopping-cart-page.component';
 
 const routes: Routes = [
   {path:'', component: PreloaderPageComponent},
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path: 'BungeeJumping', component: AdventureListComponent},
   {path: 'booknow', component: BooknowComponent},
   {path:'packagelist',component: PackageEvenComponent},
+  {path:'scpackage',component:ShoppingCartPageComponent}
 
 ];
 
