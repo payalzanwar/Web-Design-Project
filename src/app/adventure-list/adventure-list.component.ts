@@ -31,6 +31,7 @@ export class AdventureListComponent implements OnInit {
             $('#wrapper').addClass('colorFour')
             .removeClass('colorFive');
         } 
+        
     });
 
 
