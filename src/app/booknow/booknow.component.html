@@ -1,0 +1,84 @@
+<app-header></app-header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <app-header></app-header>
+  <div id="wrapper">  
+  </div>
+  
+  <h1>Time Your Adventure</h1>
+    
+  <div class="container">
+    <div id="pickadate">
+        <h4>Start Date</h4>
+        <mat-form-field>
+          <input id="InputDate" matInput [matDatepicker]= "myDatePicker" placeholder="Choose a Date">
+          <mat-datepicker-toggle  [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
+          <mat-datepicker  #myDatePicker></mat-datepicker>
+        </mat-form-field>
+        <button (click)="myFunc()"  id="datepicker" mat-raised-button>Check the Schedule</button>
+    </div>
+    <div id="tbl">
+      <table id="tab">
+        <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Available</th>
+        <th>Price</th>
+        <th></th>
+      </tr>
+      <span *ngFor ="let booking of this.dateObject;">
+        <tr>
+          <td>{{booking.Date}}</td>
+          <td>{{booking.Time}}</td>
+          <td>{{booking.Available}}</td>
+          <td>{{booking.price}}</td>
+        </tr>
+      
+          
+
+        
+        <!-- <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" >
+          
+          <ng-container matColumnDef="date">
+             <th mat-header-cell *matHeaderCellDef> Date </th>
+            <td mat-cell *matCellDef="let element">{{booking.Date}}</td>
+          </ng-container>
+        
+          <ng-container matColumnDef="time">
+            <th mat-header-cell *matHeaderCellDef> Time </th>
+            <td mat-cell *matCellDef="let element">{{booking.Time}}</td>
+          </ng-container>
+        
+          <ng-container matColumnDef="available">
+            <th mat-header-cell *matHeaderCellDef> Available </th>
+            <td mat-cell *matCellDef="let element">{{booking.Available}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef> Price </th>
+            <td mat-cell *matCellDef="let element">{{booking.price}}</td>
+          </ng-container>
+        
+          <ng-container matColumnDef="booknow">
+            <th mat-header-cell *matHeaderCellDef>  </th>
+            <td mat-cell *matCellDef="let element"><button mat-raised-button>Add To Cart</button> </td>
+          </ng-container>
+        
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table> -->
+      </span>
+    </table>
+    </div>
+  </div>
+    
+</body>
+</html>
+<app-footer></app-footer>
