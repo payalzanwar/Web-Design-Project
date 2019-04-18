@@ -29,7 +29,6 @@ const routes: Routes = [
   {path: 'BungeeJumping', component: AdventureListComponent},
   {path: 'booknow', component: BooknowComponent},
   {path:'packagelist',component: PackageEvenComponent},
-  {path:'scpackage',component:ShoppingCartPackageComponent}
 
 ];
 
