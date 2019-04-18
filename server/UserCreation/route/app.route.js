@@ -5,6 +5,9 @@ module.exports = (app) => {
     const accomodationSitesCtrl = require('../controller/accomodationSitesController');    
     const adventures = require('../controller/adventureController');
     const booking = require('../controller/BookController');
+    const blogCtrl = require('../controller/blogController');
+
+
     app.post('/user',user.create);
     app.get('/user/:email/:password',user.getUser);
     app.delete('/user/:email',user.delete);
@@ -17,6 +20,11 @@ module.exports = (app) => {
 
     app.get('/accomodationSites', accomodationSitesCtrl.getSites);
     app.post('/accomodationSite/create', accomodationSitesCtrl.addSites);
+
+    app.post('/upload', blogCtrl.upload);
+    app.get('/posts', blogCtrl.getPosts);
+    app.put('/updateLikes', blogCtrl.updateLikes);
+    // app.post('/addPost', blogCtrl.addPost);
 
     app.get('/adventures/:adventureType', adventures.getAdvList);
     app.post('/adventure/create', adventures.createadv);

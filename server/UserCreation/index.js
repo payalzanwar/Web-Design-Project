@@ -6,7 +6,9 @@ var cors = require('cors');
 
 
 const app = express();
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '150mb', extended: true}));
+app.use(bodyParser.urlencoded({limit: '150mb', extended: true}));
 app.use(cors());
 
 app.get('/',(req,res) => {

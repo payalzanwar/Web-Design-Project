@@ -14,6 +14,8 @@ import { BooknowComponent } from './booknow/booknow.component';
 // import { ShowPackagesComponent } from './package-page/show-packages/show-packages.component';
 import { PackageEvenComponent } from './package-even/package-even.component';
 import { ShoppingCartPageComponent } from './shopping-cart-page/shopping-cart-page.component';
+import { BlogComponent } from './blog/blog.component';
+
 
 const routes: Routes = [
   {path:'', component: PreloaderPageComponent},
@@ -21,15 +23,17 @@ const routes: Routes = [
   {path:'transportTypes', component: TransportListComponent, canActivate: [AuthGuard]},
   {path:'transportSites/:transportType', component: TransportSitesComponent, canActivate: [AuthGuard]},
   {path:'accomodation', component: AccomodationComponent, canActivate: [AuthGuard]},
-  {path:'signup', component: SignupPageComponent},
-  {path:'login', component: LoginPageComponent},
-  {path: 'Scuba', component: AdventureListComponent},
-  {path: 'RiverRafting', component: AdventureListComponent},
-  {path: 'Paragliding', component: AdventureListComponent},
-  {path: 'BungeeJumping', component: AdventureListComponent},
-  {path: 'booknow', component: BooknowComponent},
-  {path:'packagelist',component: PackageEvenComponent},
-  {path:'scpackage',component:ShoppingCartPageComponent}
+  {path:'signup', component: SignupPageComponent, canActivate: [AuthGuard]},
+  {path:'login', component: LoginPageComponent, canActivate: [AuthGuard]},
+  {path: 'Scuba', component: AdventureListComponent, canActivate: [AuthGuard]},
+  {path: 'RiverRafting', component: AdventureListComponent, canActivate: [AuthGuard]},
+  {path: 'Paragliding', component: AdventureListComponent, canActivate: [AuthGuard]},
+  {path: 'BungeeJumping', component: AdventureListComponent, canActivate: [AuthGuard]},
+  {path: 'booknow', component: BooknowComponent, canActivate: [AuthGuard]},
+  {path:'packagelist',component: PackageEvenComponent, canActivate: [AuthGuard]},
+  {path:'scpackage',component:ShoppingCartPageComponent, canActivate: [AuthGuard]},
+  {path:'blog', component: BlogComponent, canActivate: [AuthGuard]},
+
 
 ];
 

@@ -23,6 +23,10 @@ import { PackageEvenComponent } from './package-even/package-even.component';
 import { ShoppingCartPackageComponent } from './shopping-cart-package/shopping-cart-package.component';
 import { ShoppingCartPageComponent } from './shopping-cart-page/shopping-cart-page.component';
 // import { PackagePageModule } from './package-page/package-page.module';
+import { BlogComponent } from './blog/blog.component';
+
+import { SortList } from './common/util/sortList.pipe';
+
 
 @NgModule({
   declarations: [
@@ -41,6 +45,8 @@ import { ShoppingCartPageComponent } from './shopping-cart-page/shopping-cart-pa
     PackageEvenComponent,
     ShoppingCartPackageComponent,
     ShoppingCartPageComponent,
+    BlogComponent,
+    SortList
 
   ],
   imports: [

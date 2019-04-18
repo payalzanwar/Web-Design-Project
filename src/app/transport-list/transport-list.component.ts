@@ -13,7 +13,7 @@ export class TransportListComponent implements OnInit {
     new TransportType('Rail Travels', 'Rail Travels', '/transportSites/railTravels'),
     new TransportType('Flights', 'Flights', '/transportSites/flights'),
     new TransportType('Motorcycle Rentals', 'Motorcycle Rentals', '/transportSites/motorcyclerentals'),
-    new TransportType('Bus & Coach Transport', 'Public Transport', '/transportSites/buses'),
+    new TransportType('Bus & Coach Transport', 'Bus & Coach Transport', '/transportSites/buses'),
     new TransportType('Ferries & Cruise Ships', 'Ferries & Cruise Ships', '/transportSites/waterTaxies')
   ];
 

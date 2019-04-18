@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AccomodationService } from '../service/accomodation.service';
+import * as $ from 'jquery';
+
 
 @Component({
   selector: 'app-accomodation',
@@ -8,13 +10,20 @@ import { AccomodationService } from '../service/accomodation.service';
 })
 export class AccomodationComponent implements OnInit {
 
-  accomodationSites: any;
+  accomodationSites: any = [];
+  sortByValue: String;
 
-  constructor(private accomService: AccomodationService) { }
+  constructor(private accomService: AccomodationService) { 
+    this.sortByValue = 'siteRating';
+  }
 
   ngOnInit() {
     this.accomService.getAccomodationSites().subscribe(data => {
       this.accomodationSites = data;
+      var $preloader = $('.wrapper');
+      var $spinner   = $preloader.find('.loader');
+      $spinner.delay(3000).fadeOut('slow');
+      $preloader.delay(3000).fadeOut('slow');
     }, error => {
 
     })
