@@ -14,28 +14,7 @@ export class AdventureListComponent implements OnInit {
   constructor(private AdventureService: AdventureService, private router:Router) { }
 
   ngOnInit() {
-    $(this).ready(function(){
-      $(this).scrollTop(0);
-      });
-      $(window).scroll(function() {
-        if ($(this).scrollTop() <= 450) {
-            $('#wrapper').addClass('colorOne')
-            .removeClass('colorTwo');
-        } else if ($(this).scrollTop() <= 1100) {
-            $('#wrapper').addClass('colorTwo')
-            .removeClass('colorThree');
-        } else if ($(this).scrollTop() <= 1720) {
-            $('#wrapper').addClass('colorThree')
-            .removeClass('colorFour');
-        } else if ($(this).scrollTop() <=2300) {
-            $('#wrapper').addClass('colorFour')
-            .removeClass('colorFive');
-        } 
-        
-    });
-
-
-     this.adventureType = this.router.url.split('/')[1];
+    this.adventureType = this.router.url.split('/')[1];
     console.log(this.adventureType);
     this.AdventureService.getAdvList(this.adventureType)
       .subscribe(data => {
@@ -44,6 +23,77 @@ export class AdventureListComponent implements OnInit {
       }, error => {
         
       });
+
+    $(this).ready(function(){
+      $(this).scrollTop(0);
+      });
+
+      if(this.adventureType == "Scuba"){
+
+        $(this).ready(function(){
+          $(window).scroll(function() {
+            if ($(this).scrollTop() <= 450) {
+                $('#wrapper').addClass('colorFive')
+                .removeClass('colorSix');
+            } else if ($(this).scrollTop() <= 1100) {
+                $('#wrapper').addClass('colorSix')
+                .removeClass('colorSeven');
+            } else if ($(this).scrollTop() <= 1720) {
+                $('#wrapper').addClass('colorSeven')
+                .removeClass('colorEight');
+            }
+          });
+        });
+      }else if(this.adventureType == "BungeeJumping"){
+        $(window).scroll(function() {
+          if ($(this).scrollTop() <= 450) {
+              $('#wrapper').addClass('colorOne')
+              .removeClass('colorTwo');
+          } else if ($(this).scrollTop() <= 1100) {
+              $('#wrapper').addClass('colorTwo')
+              .removeClass('colorThree');
+          } else if ($(this).scrollTop() <= 1720) {
+              $('#wrapper').addClass('colorThree')
+              .removeClass('colorFour');
+          } else if ($(this).scrollTop() <=2300) {
+              $('#wrapper').addClass('colorFour')
+              .removeClass('colorFive');
+          } 
+      });        
+      }else if(this.adventureType == "RiverRafting"){
+
+        $(this).ready(function(){
+          $(window).scroll(function() {
+            if ($(this).scrollTop() <= 450) {
+                $('#wrapper').addClass('colorEight')
+                .removeClass('colorNine');
+            } else if ($(this).scrollTop() <= 1100) {
+                $('#wrapper').addClass('colorNine')
+                .removeClass('colorTen');
+            } else if ($(this).scrollTop() <= 1720) {
+                $('#wrapper').addClass('colorTen')
+                .removeClass('colorEleven');
+            }
+          });
+        });
+        
+      }else{
+        
+        $(this).ready(function(){
+          $(window).scroll(function() {
+            if ($(this).scrollTop() <= 450) {
+                $('#wrapper').addClass('colorEleven')
+                .removeClass('colorTwelve');
+            } else if ($(this).scrollTop() <= 1100) {
+                $('#wrapper').addClass('colorTwelve')
+                .removeClass('colorThirteen');
+            } else if ($(this).scrollTop() <= 1720) {
+                $('#wrapper').addClass('colorThirteen')
+                .removeClass('colorFifteen');
+            } 
+          });
+        });
+      }
   }
 
   

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { BookService } from '../service/Book.service';
 import { UserService } from '../service/user.service';
 
@@ -13,6 +13,52 @@ export class ShoppingCartPageComponent implements OnInit {
   cartItems: any;
   total: number = 0;
 
+  //PayPal Code Starts Here
+  addScript: boolean = false;
+  paypalLoad: boolean = true;
+  finalAmount: number = 1;
+  paypalConfig = {
+    env: 'sandbox',
+    client: {
+      sandbox: 'AdxzNHWznw_ZJU3LB1fZoSDYQSntM_c3abNT5zm0jvFZHsc9kyBf43RBxzbbmRFAgcmmf_6v12q9bSgG'
+    },
+    commit: true,
+    payment: (data, actions) => {
+      return actions.payment.create({
+        payment: {
+          transactions: [
+            {amount: {total: this.finalAmount, currency: 'USD'}}
+          ]
+        }
+      });
+    },
+    onAuthorize: (data, actions) => {
+      return actions.payment.execute().then((payment) => {
+        // where to redirect after successful payment
+        alert("Success!");
+
+      })
+    }
+  };
+
+  ngAfterViewChecked(): void {
+    if(!this.addScript){
+      this.addPaypalScript().then(() => {
+        paypal.Button.render(this.paypalConfig,'#paypal-checkout-btn'); 
+        this.paypalLoad = false;
+      }) 
+    }
+  }
+  addPaypalScript(){
+    this.addScript = true;
+    return new Promise((resolve, reject)=>{
+      let scripttagElement = document.createElement('script');
+      scripttagElement.src = 'http://www.paypalobjects.com/api/checkout.js';
+      scripttagElement.onload = resolve;
+      document.body.appendChild(scripttagElement);
+    })
+  }
+// PayPal Code Ends here
 
   constructor(private BookService: BookService, private UserService:UserService) { }
 
