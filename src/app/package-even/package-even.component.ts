@@ -31,7 +31,9 @@ export class PackageEvenComponent implements OnInit {
     .subscribe(data => {
      console.log(data);
       this.packageObject=data;
-    
+      this.packageObject.forEach(onePackage => {
+        onePackage.img = this.getImgData(onePackage.img);
+      });
     //  this.PackageService.savePackage(data);
     
     }, error => {
