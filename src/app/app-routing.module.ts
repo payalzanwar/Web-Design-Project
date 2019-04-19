@@ -20,11 +20,11 @@ import { BlogComponent } from './blog/blog.component';
 const routes: Routes = [
   {path:'', component: PreloaderPageComponent},
   {path:'home', component: HomePageComponent},
+  {path:'signup', component: SignupPageComponent},
+  {path:'login', component: LoginPageComponent},
   {path:'transportTypes', component: TransportListComponent, canActivate: [AuthGuard]},
   {path:'transportSites/:transportType', component: TransportSitesComponent, canActivate: [AuthGuard]},
   {path:'accomodation', component: AccomodationComponent, canActivate: [AuthGuard]},
-  {path:'signup', component: SignupPageComponent, canActivate: [AuthGuard]},
-  {path:'login', component: LoginPageComponent, canActivate: [AuthGuard]},
   {path: 'Scuba', component: AdventureListComponent, canActivate: [AuthGuard]},
   {path: 'RiverRafting', component: AdventureListComponent, canActivate: [AuthGuard]},
   {path: 'Paragliding', component: AdventureListComponent, canActivate: [AuthGuard]},
