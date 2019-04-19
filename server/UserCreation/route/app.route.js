@@ -29,10 +29,11 @@ module.exports = (app) => {
     app.get('/adventures/:adventureType', adventures.getAdvList);
     app.post('/adventure/create', adventures.createadv);
 
-    app.get('/booking/:date', booking.getBooking);
+    app.get('/booking/:date/:adventuretype', booking.getBooking); 
     app.post('/booknow/create', booking.create);
 
     app.post('/addCartItem', booking.addCartItem);
     app.get('/getCardItems/:email', booking.getCardItems);
     app.delete('/deleteFromCart/:id', booking.deleteFromCart);
+    app.delete('/deleteAll',booking.deleteAll);
 }

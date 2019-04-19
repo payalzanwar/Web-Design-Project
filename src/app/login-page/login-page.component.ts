@@ -46,7 +46,7 @@ export class LoginPageComponent implements OnInit {
       .subscribe(data => {
         this.waitForResponse = false;
         this.userService.saveLoggedInUser(data);
-        this.router.navigate(['/transportTypes']);
+        this.router.navigate(['/home']);
       }, error => {
         this.waitForResponse = false;
         if(error.status === 0 && error.statusText === 'Unknown Error'){

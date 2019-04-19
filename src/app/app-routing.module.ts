@@ -29,7 +29,7 @@ const routes: Routes = [
   {path: 'RiverRafting', component: AdventureListComponent, canActivate: [AuthGuard]},
   {path: 'Paragliding', component: AdventureListComponent, canActivate: [AuthGuard]},
   {path: 'BungeeJumping', component: AdventureListComponent, canActivate: [AuthGuard]},
-  {path: 'booknow', component: BooknowComponent, canActivate: [AuthGuard]},
+  {path: 'booknow/:adventuretype', component: BooknowComponent, canActivate: [AuthGuard]},
   {path:'packagelist',component: PackageEvenComponent, canActivate: [AuthGuard]},
   {path:'scpackage',component:ShoppingCartPageComponent, canActivate: [AuthGuard]},
   {path:'blog', component: BlogComponent, canActivate: [AuthGuard]},

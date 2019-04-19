@@ -4,6 +4,7 @@ const Cart = require('../model/cart');
 
 exports.create = (req,res) => {
     const Booking = new Book({
+        AdvType: req.body.AdvType,
         Date : req.body.Date,
         Time : req.body.Time,
         price: req.body.price,
@@ -23,20 +24,25 @@ exports.create = (req,res) => {
 };
 
 exports.getBooking = (req,res) => {
-   const date = req.params.date.split("=")[1];
-   console.log("print"+date);
-    Book.find({Date:date},function (err,booksnow){
-        if(err)
-        res.status(400).send({message : 'Bad Request (Bookings not found)'});
     
-        if(booksnow){
-        
+    const data ={
+        Date : req.params.date.split("=")[1],
+         AdvType :  req.params.adventuretype.split("=")[1]
+         
+    };
+ 
+   console.log("print"+data.AdvType+data.Date);
+    Book.find(data,function (err,booksnow){
+        if(err)
+        res.status(400).send({message : 'Bad Request (AdventureType not found)'});
+        if(booksnow)
+        console.log("result"+booksnow);
             res.send(booksnow);
         
-        }
-       
-    }); 
-};
+        });
+   
+    }
+
 
 exports.addCartItem = (req, res) => {
     
@@ -80,4 +86,23 @@ exports.deleteFromCart = (req, res) => {
         
     })
 }
+    exports.deleteAll = (req, res) => {
+    
+        Cart.find({},(error,data)=>{
+            data.forEach(element => {
+                
+                Cart.findOneAndDelete({_id:element._id}, (error, data) => {
+                    if(!error){
+                        res.send({'message':'Deleted Cart Succssfully'});
+                    }
+                    else{
+                        res.send(error);
+                    }
+                    
+                });
+            });
+        });
+       
+        
 
+}

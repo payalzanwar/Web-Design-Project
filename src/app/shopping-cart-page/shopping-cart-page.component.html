@@ -3,7 +3,8 @@
 <div class="container">
     <div class="card-header text-white">
         <h1>Cart Details</h1>
-        <span class="float-right" [(ngModel)]= "finalAmount">Total: {{total}}</span>
+        <!-- <span class="float-right" [(ngModel)]= "finalAmount">Total: {{total}}</span> -->
+        <span class="float-right">Total: {{total}}</span>
     </div>
     
     <div *ngFor="let cart of cartItems">

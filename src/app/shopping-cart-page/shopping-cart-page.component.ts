@@ -2,21 +2,22 @@ import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { BookService } from '../service/Book.service';
 import { UserService } from '../service/user.service';
 
+declare let paypal: any;
+
 @Component({
   selector: 'app-shopping-cart-page',
   templateUrl: './shopping-cart-page.component.html',
   styleUrls: ['./shopping-cart-page.component.scss']
 })
-export class ShoppingCartPageComponent implements OnInit {
+export class ShoppingCartPageComponent implements OnInit, AfterViewChecked {
 
   userEmail: String;
   cartItems: any;
-  total: number = 0;
+  total: number = 1;
 
   //PayPal Code Starts Here
   addScript: boolean = false;
   paypalLoad: boolean = true;
-  finalAmount: number = 1;
   paypalConfig = {
     env: 'sandbox',
     client: {
@@ -27,7 +28,7 @@ export class ShoppingCartPageComponent implements OnInit {
       return actions.payment.create({
         payment: {
           transactions: [
-            {amount: {total: this.finalAmount, currency: 'USD'}}
+            {amount: {total: this.total, currency: 'USD'}}
           ]
         }
       });
@@ -36,7 +37,8 @@ export class ShoppingCartPageComponent implements OnInit {
       return actions.payment.execute().then((payment) => {
         // where to redirect after successful payment
         alert("Success!");
-
+        // this.deleteFromCart(); // to be checked
+        this.deleteAllCart();
       })
     }
   };
@@ -76,7 +78,7 @@ export class ShoppingCartPageComponent implements OnInit {
     .subscribe(data => {
       this.cartItems = data;
       this.cartItems.forEach(cart => {
-        this.total = this.total + parseInt(cart.packageDetails.price);
+        this.total = this.total + parseInt(cart.packageDetails.price)-1;
         
       });
       console.log(data);
@@ -89,7 +91,18 @@ export class ShoppingCartPageComponent implements OnInit {
     this.BookService.deleteFromCart(id)
     .subscribe(data => {
       console.log(data);
-      this.total = 0;
+      this.total = 1;
+      this.getCardItems();
+      }, error => {
+        
+    });
+  }
+
+  deleteAllCart(){
+    this.BookService.deleteAllCart()
+    .subscribe(data => {
+      console.log(data);
+      this.total = 1;
       this.getCardItems();
       }, error => {
         

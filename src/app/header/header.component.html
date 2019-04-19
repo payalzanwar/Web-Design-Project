@@ -15,7 +15,7 @@
 
   <form class="form-inline my-2 my-lg-0">
       <div *ngIf="this.userObject;else login" class="user-name">
-        <a [rounterLink]="['/scpackage']"><img id="carticon" src="../../assets/images/home/cart_w.png" alt=""></a>  
+        <a [routerLink]="['/scpackage']"><img id="carticon" src="../../assets/images/home/cart_w.png" alt=""></a>  
         <span id="welcometxt">Welcome, {{this.currentUser}} </span>
         <a (click)="logout()"><button class="btn btn-outline-info my-2 my-sm-0" type="button">Logout</button></a>
       </div>

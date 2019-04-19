@@ -11,8 +11,8 @@ export class BookService {
   private serverUrl: string = 'http://localhost:3000';
   constructor(private http: HttpClient) { }
 
-  getBooking(DateEntered :String){
-    return this.http.get(this.serverUrl + '/booking/date='+DateEntered);
+  getBooking(DateEntered :String, AdventureType:String ){
+    return this.http.get(this.serverUrl + '/booking/date='+DateEntered+'/adventuretype='+AdventureType);
   }
 
   addCartItem(cartData){
@@ -27,5 +27,7 @@ export class BookService {
     return this.http.delete(this.serverUrl+'/deleteFromCart/id='+ id);
   }
 
- 
+  deleteAllCart(){
+    return this.http.delete(this.serverUrl+'/deleteAll');
+  }
 }

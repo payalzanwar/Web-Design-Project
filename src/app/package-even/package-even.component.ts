@@ -2,6 +2,7 @@ import { Component, OnInit ,TemplateRef,ViewChild} from '@angular/core';
 import { PackageService } from '../service/package.service';
 import { NgForOf } from '@angular/common';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-package-even',
@@ -14,8 +15,8 @@ export class PackageEvenComponent implements OnInit {
  
   errorMsg: string = 'Unable to connect to server';
   packageObject: any = [];
-  
-  constructor(private PackageService: PackageService) {
+  packageType:string;
+  constructor(private PackageService: PackageService, private router:Router) {
    
     // this.packageObject = this.PackageService.getPackageList();
     // alert(this.packageObject.title);
@@ -30,7 +31,7 @@ export class PackageEvenComponent implements OnInit {
     .subscribe(data => {
      console.log(data);
       this.packageObject=data;
-     
+    
     //  this.PackageService.savePackage(data);
     
     }, error => {
@@ -49,4 +50,9 @@ export class PackageEvenComponent implements OnInit {
     return 'data:image/jpg;base64,' + window.btoa( binary );
   }
 
+  Packagedetails(title){
+    console.log(title);
+    this.packageType="/booknow/"+title;
+    this.router.navigate([this.packageType]);
+  }
 }

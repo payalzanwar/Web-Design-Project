@@ -11,11 +11,13 @@ export class AdventureListComponent implements OnInit {
   adventureObject: any = [];
   adventureType :string ='';
   errorMsg: string = 'Unable to connect to server';
+  advlink:string;
   constructor(private AdventureService: AdventureService, private router:Router) { }
 
   ngOnInit() {
     this.adventureType = this.router.url.split('/')[1];
     console.log(this.adventureType);
+    this.advlink="/booknow/"+this.adventureType;
     this.AdventureService.getAdvList(this.adventureType)
       .subscribe(data => {
         this.adventureObject = data;
@@ -48,12 +50,15 @@ export class AdventureListComponent implements OnInit {
         $(window).scroll(function() {
           if ($(this).scrollTop() <= 450) {
               $('#wrapper').addClass('colorOne')
+              .removeClass('colorFive')
               .removeClass('colorTwo');
           } else if ($(this).scrollTop() <= 1100) {
               $('#wrapper').addClass('colorTwo')
+              .removeClass('colorSix')
               .removeClass('colorThree');
           } else if ($(this).scrollTop() <= 1720) {
               $('#wrapper').addClass('colorThree')
+              .removeClass('colorSeven')
               .removeClass('colorFour');
           } else if ($(this).scrollTop() <=2300) {
               $('#wrapper').addClass('colorFour')

@@ -6,6 +6,7 @@ exports.create = (req,res) => {
     const data = {
         email: req.body.email
     };
+    
     User.findOne(data, (error, user) => {
         if(user){
             res.status(401).send({'message':'User exists already with this Email Id'});
