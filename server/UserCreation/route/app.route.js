@@ -31,4 +31,8 @@ module.exports = (app) => {
 
     app.get('/booking/:date', booking.getBooking);
     app.post('/booknow/create', booking.create);
+
+    app.post('/addCartItem', booking.addCartItem);
+    app.get('/getCardItems/:email', booking.getCardItems);
+    app.delete('/deleteFromCart/:id', booking.deleteFromCart);
 }

@@ -1,5 +1,7 @@
 const Book = require('../model/booking');
 var fs = require('fs');
+const Cart = require('../model/cart');
+
 exports.create = (req,res) => {
     const Booking = new Book({
         Date : req.body.Date,
@@ -35,4 +37,47 @@ exports.getBooking = (req,res) => {
        
     }); 
 };
+
+exports.addCartItem = (req, res) => {
+    
+    const ts = new Cart({
+        email: req.body.email,
+        packageDetails: req.body.packageDetails
+    });
+
+    ts.save().then(() => {
+        console.log('Inserted Cart Item');
+        res.send({'message':'Inserted Cart Item'});
+    }, (err) => {
+        console.log('Error while inserting cart item');
+        return res.send(err);
+    });
+
+};
+
+exports.getCardItems = (req, res) => {
+    const email = req.params.email.split("=")[1];
+    Cart.find({'email':email}, (error, list) => {
+        if(list){
+            res.send(list);
+        }else{
+            res.send('Error Retreiving Posts');
+        }
+    })
+}
+
+exports.deleteFromCart = (req, res) => {
+    
+    const id = req.params.id.split("=")[1];
+    console.log(id);
+    Cart.findByIdAndDelete({_id:id}, (error, data) => {
+        if(!error){
+            res.send({'message':'Deleted Cart Succssfully'});
+        }
+        else{
+            res.send(error);
+        }
+        
+    })
+}
 

@@ -1,11 +1,38 @@
+<app-header></app-header>
 
-<app-shopping-cart-package></app-shopping-cart-package>
-<app-shopping-cart-package></app-shopping-cart-package>
-<app-shopping-cart-package></app-shopping-cart-package>
-<app-shopping-cart-package></app-shopping-cart-package>
+<div class="container">
+    <div class="card-header text-white">
+        <h1>Cart Details</h1>
+        <span class="float-right">Total: {{total}}</span>
+    </div>
+    
+    <div *ngFor="let cart of cartItems">
+        
+    <div class="card text-center card-section ">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-3 col-md-12 border1" >
+            Date: {{cart.packageDetails.date}}
+          </div>
+          <div class="col-lg-3 col-md-12 border1">
+            Package Name: {{cart.packageDetails.title}}
+          </div>
+          <div class="col-lg-3 col-md-12 border1">
+            Time: {{cart.packageDetails.time}}
+          </div> 
+          <div class="col-lg-3 col-md-12 border1">
+            Price: {{cart.packageDetails.price}}
+          </div>
+          <button class="btn btn-primary" (click)="deleteFromCart(cart._id)">Delete</button>
+        </div>
+      </div>
+      
+    </div>
+   
+    </div>
 
-<div class="card card-sec">
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Total. $</li>
-    </ul>
-  </div>
+    <button class="btn btn-primary"><a [routerLink]="['/home']">Back To Shopping</a></button>
+</div>
+
+
+<app-footer></app-footer>

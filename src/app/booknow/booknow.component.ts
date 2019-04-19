@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import { BookService } from '../service/Book.service';
+import { UserService } from '../service/user.service';
+import { timeInterval } from 'rxjs/operators';
 export interface BookingElement {
   time: string;
   date: number;
@@ -33,8 +35,10 @@ export class BooknowComponent implements OnInit{
   year:String;
   day:String;
   dateObject : any =[];
+  cartData: any;
+  userEmail: String;
  
-  constructor(private BookService : BookService){
+  constructor(private BookService : BookService, private userService: UserService){
     
   }
  
@@ -65,6 +69,30 @@ export class BooknowComponent implements OnInit{
       }
    
   ngOnInit() {
+    const userObject = this.userService.getLoggedInUser();
+    
+    if(userObject)
+      this.userEmail = userObject.email;
+
   }  
+
+  addToCart(booking){
+    
+    this.cartData = {
+      email: this.userEmail,
+      packageDetails: {
+        title: 'Charming California',
+        date: booking.Date,
+        time: booking.Time,
+        price: booking.price
+      }
+    }
+    this.BookService.addCartItem(this.cartData)
+      .subscribe(data => {
+        console.log(data);
+      }, error => {
+        
+    });
+  }
    
 }
