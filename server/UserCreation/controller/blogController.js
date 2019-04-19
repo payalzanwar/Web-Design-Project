@@ -10,6 +10,7 @@ exports.upload = (req, res) => {
         email: req.body.email,
         likes: req.body.likes | 0,
         liked_by: [],
+        comments: [],
         img: { 
             data: image, 
             contentType: req.body.fileType
@@ -35,25 +36,33 @@ exports.getPosts = (req, res) => {
     })
 }
 exports.updateLikes = (req, res) => {
-    console.log(req.body.liked_by);
-
     const likes = req.body.likes;
     const objectId = req.body.objectId;
     const likedBy = req.body.liked_by;
+    const unlikedBy = req.body.unliked_by;
 
-    Post.findOne({_id: objectId}, (error, post) => {
-        if(post){
-            Post.updateOne( {_id: objectId} , 
-                    { "$set": 
-                        {  
-                            "likes": likes
-                        }
-                    },
-                    { "$push": 
-                        {  
-                            "liked_by": 2
-                        }
-                    })
+    if(likedBy){
+        Post.updateOne({_id: objectId}, { $push: {"liked_by": likedBy}}).then((result) => {
+            if(result){
+                Post.updateOne( {_id: objectId},{$set:{"likes": likes}}).then((result) => {
+                    if(result){
+                        return res.send({'message': 'Updated likes'});
+                    }else{
+                        return res.status(401).send("Invalid Id");
+                    }
+                }).catch((err) => {
+                    return res.status(401).send(err.message);
+                });
+            }else{
+                return res.status(401).send("Invalid Id");
+            }
+        }).catch((err) => {
+            return res.status(401).send(err.message);
+        });
+    } else if(unlikedBy){
+        Post.updateOne({_id: objectId},{$pull:{"liked_by": unlikedBy}}).then((result) => {
+            if(result){
+                Post.updateOne( {_id: objectId},{$set:{"likes": likes}})
                     .then((result) => {
                         if(result){
                             return res.send({'message': 'Updated likes'});
@@ -62,33 +71,53 @@ exports.updateLikes = (req, res) => {
                         }
                     }).catch((err) => {
                         return res.status(401).send(err.message);
-                    });
+                    });    
+            }else{
+                return res.status(401).send("Invalid Id");
+            }
+        }).catch((err) => {
+            return res.status(401).send(err.message);
+        });
+    }
+}
 
-            
-        }else{
-            res.send('Error Retreiving Post');
+exports.deletePost = (req, res) => {
+    const id = req.params.id.split("=")[1];
+    Post.findByIdAndDelete({_id:id}, (error, data) => {
+        if(!error){
+            res.send({'message':'Deleted Post Successfully'});
+        }
+        else{
+            res.send(error);
         }
     })
 }
 
-// exports.addPost = (req, res) => {
-//     const ts = new Post({
-//         postDesc: 'hh',
-//         email: 'hh@hh.com',
-//         img: { 
-//             data: fs.readFileSync('./images/bricktownwatertaxi.png'), 
-//             contentType: 'image/png'
-//         }
-//     });
-
-//     console.log(ts.img.data);
-    
-
-//     ts.save().then(() => {
-//         console.log({'message':'Inserted Post successfully'});
-//         return res.status(204).send('Inserted Post successfully');
-//     }, (err) => {
-//         console.log('Error while inserting Post');
-//         return res.send(err);
-//     });
-// }
+exports.addComment = (req, res) => {
+    console.log(req.body.id);
+    const objectId = req.body.id;
+    Post.updateOne( {_id: objectId},{ 
+        $push: {
+            "comments": {
+                comment: req.body.comment,
+                userName: req.body.userName
+            }
+        }
+    }, {new: true})
+    .then((result) => {
+        console.log(result);
+        if(result){
+            Post.find({_id: objectId},{comments:1, _id:0}, (error, list) => {
+                if(list){
+                    res.send(list);
+                }else{
+                    res.send('Error Retreiving Comments');
+                }
+            })
+        }else{
+            return res.status(401).send("Invalid Id");
+        }
+    }).catch((err) => {
+        return res.status(401).send(err.message);
+    });  
+}

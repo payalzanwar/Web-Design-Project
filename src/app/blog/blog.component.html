@@ -16,7 +16,7 @@
                 <i class="material-icons float-left">camera_alt</i><span class="photo-text float-right">Photo</span>
             </button>
             <span *ngIf="this.selectedFile && this.selectedFile.name" class="filename-text">{{this.selectedFile.name}}</span>
-            <button class="btn btn-primary float-right" [disabled]="!model.postDesc" (click)="onUpload()">Upload</button>
+            <button class="btn btn-primary float-right" [disabled]="(!model.postDesc || !this.selectedFile || !this.selectedFile.name)" (click)="onUpload()">Upload</button>
 
         </div>
         
@@ -33,17 +33,34 @@
             <span class="date-text float-right">{{post.createdDate}}</span>
         </div>
         <hr>
-        <p>
+        <p class="post-desc">
           <i class="fas fa-quote-left fa-2x"></i>
-          {{post.postDesc}}
+          <span class="ml-2 mr-2">{{post.postDesc}}</span>
           <i class="fas fa-quote-right fa-2x"></i>
         </p>
         <!--<img [src]="getImgData(post.img)" class="post-img">-->
         <img src="{{post.img}}" class="post-img">
-        <div class="row m-0">
-            <i class="material-icons float-left like-btn" (click)="setlikes(post, true)" *ngIf="!post.liked">favorite_border</i>
-            <i class="material-icons float-left like-btn" (click)="setlikes(post, false)" *ngIf="post.liked">favorite</i>{{post.likes}}
+        <div class="row post-icons">
+          <i class="material-icons float-left like-btn" (click)="setlikes(post, true)" *ngIf="!post.liked">favorite_border</i>
+          <i class="material-icons float-left like-btn" (click)="setlikes(post, false)" *ngIf="post.liked">favorite</i>
+          <h5 class="float-left ml-1">{{post.likes}}</h5>
+          <i class="material-icons float-right delete-icon" *ngIf="post.email === userEmail" (click)="deletePost(post._id)">delete</i>
         </div>
+        <br>
+        <br>
+        <div class="row m-0">
+          <h6>Comments({{post.comments.length}})</h6>
+        </div>
+        <div class="row col-12">
+          <input type="text" class="form-control mb-2" [(ngModel)]="post.comment" (keydown)="onEnterKey($event, post)" name="postComment" placeholder="Comment here...">
+        </div>
+
+        <section>
+          <div *ngFor="let comment of post.comments" class="mt-2">
+            <h6 class="d-inline">{{comment.userName}}</h6>
+            <span class="ml-3">{{comment.comment}}</span>
+          </div>
+        </section>
         
       </blockquote>
     </div>

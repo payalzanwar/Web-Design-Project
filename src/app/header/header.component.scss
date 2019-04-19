@@ -15,6 +15,7 @@
         img{
             height: 4rem;
             width: 4rem;
+            border: 3px solid #2196f3;
         }
     }
     .context-menu{
@@ -50,7 +51,7 @@
         
         .title-menu{
             color: #ffffff;
-            left: -285px;
+            left: -95px;
             height: 10px;
             position: absolute;
             -webkit-transform: translate(20px, 0) rotate(-90deg);
@@ -65,7 +66,7 @@
             transform-origin: 100% 50%;
             white-space: nowrap;
             text-align: right;
-            width: 300px;
+            width: 100px;
             -webkit-transition: -webkit-transform .25s ease-out,opacity .25s ease-out;
             -moz-transition: -moz-transform .25s ease-out,opacity .25s ease-out;
             -o-transition: -o-transform .25s ease-out,opacity .25s ease-out;

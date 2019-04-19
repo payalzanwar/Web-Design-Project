@@ -34,14 +34,21 @@
     <div class="form-group col-3">
       <label for="password">Password *</label>
       <input formControlName="password" class="form-control" type="password" id="password"/>
+      
       <span *ngIf="signupForm.get('signupData.password').touched && !signupForm.get('signupData.password').valid" class="text-danger"> 
-        <span *ngIf="signupForm.get('signupData.password').errors['required']">
+        <span *ngIf="signupForm.get('signupData.password').errors['required']; else paswordContent">
           Password is required!
         </span>
-        <span *ngIf="signupForm.get('signupData.password').errors['nameIsForbidden']">
-          Please enter a valid Password
-        </span>  
+        <ng-template #paswordContent>
+          <span *ngIf="signupForm.get('signupData.password').errors['nameIsForbidden'] || !signupForm.get('signupData.password').valid">
+            Please enter a valid Password
+          </span> 
+        </ng-template> 
       </span>
+
+      <span class="row m-0 text-info">
+          (Password should contain atleast special character and should be 5 characters long.)
+        </span>
     </div>
   </div>
 

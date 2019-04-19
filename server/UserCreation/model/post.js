@@ -5,6 +5,10 @@ const Post = mongoose.Schema({
     email: String,
     likes: Number,
     liked_by: [],
+    comments: [{
+        comment: String,
+        userName: String
+    }],
     img: { 
         data: Buffer,
         contentType: String 

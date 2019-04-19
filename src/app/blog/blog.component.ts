@@ -3,8 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { UserService } from '../service/user.service';
 import { BlogService } from '../service/blog.service';
 import * as $ from 'jquery';
-import { post } from 'selenium-webdriver/http';
-
 
 @Component({
   selector: 'app-blog',
@@ -41,6 +39,10 @@ export class BlogComponent implements OnInit {
         this.posts.forEach(post => {
           post.img = this.getImgData(post.img);
           post.createdDate = this.getDate(post._id);
+          post.liked = post.liked_by.some((item) => {
+            return (item === this.userName);
+          })
+          post.comment = '';
         });
         
         this.posts.sort((a: any, b: any) => {
@@ -113,30 +115,62 @@ export class BlogComponent implements OnInit {
       post.likes++;
       post.liked = true;
       post.liked_by = this.userName;
+      post.unliked_by = '';
     }
     else{
       post.likes--;
       post.liked = false;
+      post.liked_by = '';
+      post.unliked_by = this.userName;
     }
 
     //update to db
     const updatedLikesData = {
       likes: post.likes,
       objectId: post._id,
-      liked_by: ''
+      liked_by: '',
+      unliked_by: ''
     }
     if(post.liked_by)
       updatedLikesData.liked_by = post.liked_by;
 
+    if(post.unliked_by)
+      updatedLikesData.unliked_by = post.unliked_by;
+
     this.blogService.updateLikes(updatedLikesData)
       .subscribe(data => {
         console.log(data);
-        // this.posts = [];
-        // this.getAllPosts();
       }, error => {
         
     });
+  }
 
+  deletePost(post_id){
+    this.blogService.deletePost(post_id)
+      .subscribe(data => {
+        this.posts = [];
+        this.getAllPosts();
+      }, error => {
+        
+    });
+  }
+
+  onEnterKey(event, post){
+    if(event.keyCode == 13 || event.which == 13) {
+      const commentData = {
+        comment: post.comment,
+        id: post._id,
+        userName: this.userName
+      }
+      this.blogService.addComment(commentData)
+      .subscribe(data => {
+        console.log(data);
+        post.comment = '';
+        post.comments = data[0].comments;
+      }, error => {
+        
+    });
+    }
   }
 
 }

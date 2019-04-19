@@ -20,4 +20,12 @@ export class BlogService {
   updateLikes(updatedData){
     return this.http.put(this.serverUrl + '/updateLikes', updatedData);
   }
+
+  deletePost(post_id){
+    return this.http.delete(this.serverUrl + '/deletePost/id=' + post_id);
+  }
+
+  addComment(commentData){
+    return this.http.put(this.serverUrl + '/addComment', commentData);
+  }
 }
