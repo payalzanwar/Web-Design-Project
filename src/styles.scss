@@ -13,7 +13,7 @@
     }
     .modal-dialog{
         margin: 0;
-        width: 22%;
+        width: 300px;
         .modal-header .close {
             outline: none;
             padding: 0;
@@ -44,8 +44,9 @@
         }
     }
 }
-body{
-    background-color: black !important;
+
+html body{
+    background-color: black;
 }
 .form-group{
     color:#fff;

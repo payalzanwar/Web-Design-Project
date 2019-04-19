@@ -1,5 +1,9 @@
 .custom-card-deck{
     margin-top: 5rem;
+    article{
+        color: #ffffff;
+        font-family: "Dancing Script";
+    }
     .custom-card{
         padding: 20px 15px;
     }
@@ -20,7 +24,6 @@
         text-align: center;
     }
     .card-img-top{
-        width: 350px;
         height: 250px;
     }
     .card-img-top &:hover{

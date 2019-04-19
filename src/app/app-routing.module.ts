@@ -9,6 +9,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { PreloaderPageComponent } from './preloader-page/preloader-page.component';
 import { AuthenticationService as AuthGuard } from './service/authentication.service';
 import { AccomodationComponent } from './accomodation/accomodation.component';
+import { BlogComponent } from './blog/blog.component';
 
 const routes: Routes = [
   {path:'', component: PreloaderPageComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:'transportTypes', component: TransportListComponent, canActivate: [AuthGuard]},
   {path:'transportSites/:transportType', component: TransportSitesComponent, canActivate: [AuthGuard]},
   {path:'accomodation', component: AccomodationComponent, canActivate: [AuthGuard]},
+  {path:'blog', component: BlogComponent, canActivate: [AuthGuard]},
   {path:'signup', component: SignupPageComponent},
   {path:'login', component: LoginPageComponent}
 

@@ -15,6 +15,10 @@ import { TransportSitesComponent } from './transport-list/transport-sites/transp
 import { PreloaderPageComponent } from './preloader-page/preloader-page.component';
 import { FooterComponent } from './footer/footer.component';
 import { AccomodationComponent } from './accomodation/accomodation.component';
+import { BlogComponent } from './blog/blog.component';
+
+import { SortList } from './common/util/sortList.pipe';
+
 
 
 @NgModule({
@@ -28,7 +32,9 @@ import { AccomodationComponent } from './accomodation/accomodation.component';
     TransportSitesComponent,
     PreloaderPageComponent,
     FooterComponent,
-    AccomodationComponent
+    AccomodationComponent,
+    BlogComponent,
+    SortList
 
   ],
   imports: [
