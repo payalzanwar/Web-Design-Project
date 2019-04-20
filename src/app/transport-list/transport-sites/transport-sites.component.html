@@ -1,4 +1,12 @@
 <app-header></app-header>
+<div id="wrapper" [ngClass]="{'rentalcars': (transportName == 'Rental Cars'), 
+                               'railtravels': (transportName == 'Rail Travels'), 
+                               'flights': (transportName == 'Flights'),
+                               'motorcycle': (transportName == 'Motorcycle Rentals'),
+                               'bus': (transportName == 'Bus & Coach Transport'),
+                               'ferries': (transportName == 'Ferries & Cruise Ships')}">
+</div>
+
 <div class="container sites-container">
 
     <nav aria-label="breadcrumb">
@@ -8,7 +16,7 @@
         </ol>
     </nav>
 
-    <article class="col-12 mt-4 mb-4">
+    <article class="col-12 mb-4">
         <h5 *ngIf="(transportName == 'Rental Cars')">
             Road tripping is one of the world’s most popular forms of travel.Whether it’s a short few days jaunt or month’s 
             at time driving around a country or a region, a road trip is one of the easiest ways to see the world.

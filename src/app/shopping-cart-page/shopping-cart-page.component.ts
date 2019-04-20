@@ -1,6 +1,8 @@
 import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { BookService } from '../service/Book.service';
 import { UserService } from '../service/user.service';
+import { MatTableDataSource } from '@angular/material';
+
 
 declare let paypal: any;
 
@@ -10,6 +12,9 @@ declare let paypal: any;
   styleUrls: ['./shopping-cart-page.component.scss']
 })
 export class ShoppingCartPageComponent implements OnInit, AfterViewChecked {
+
+  public displayedColumns = ['date', 'title', 'time', 'price', 'delete'];
+  public dataSource = new MatTableDataSource<CartTableData>();
 
   userEmail: String;
   cartItems: any;
@@ -82,6 +87,8 @@ export class ShoppingCartPageComponent implements OnInit, AfterViewChecked {
         
       });
       console.log(data);
+      this.dataSource.data = data as CartTableData[];
+
       }, error => {
         
     });
@@ -108,4 +115,14 @@ export class ShoppingCartPageComponent implements OnInit, AfterViewChecked {
         
     });
   }
+}
+
+
+export interface CartTableData{
+  date: string;
+  title: string;
+  time: string;
+  price: string;
+  addToCart: string;
+  delete: string;
 }
