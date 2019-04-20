@@ -1,25 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import * as $ from 'jquery';
 import { BookService } from '../service/Book.service';
 import { UserService } from '../service/user.service';
-import { timeInterval } from 'rxjs/operators';
 import { Router } from '@angular/router';
-export interface BookingElement {
-  time: string;
-  date: number;
-  available: number;
-  price: number;
-  booknow: number;
-}
+import { MatTableDataSource } from '@angular/material';
+import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 
-const ELEMENT_DATA: BookingElement[] = [
-  {date: 2, time: 'H', available: 6, price: 1, booknow: 2},
-  {date: 1, time: 'H', available: 9, price: 1, booknow: 2},
-  {date: 3, time: 'H', available: 6, price: 1, booknow: 2},
-  {date: 4, time: 'H', available: 9, price: 1, booknow: 2},
-  {date: 5, time: 'H', available: 1, price: 1, booknow: 2},
-
-];
 
 @Component({
   selector: 'app-booknow',
@@ -29,8 +15,12 @@ const ELEMENT_DATA: BookingElement[] = [
 
 export class BooknowComponent implements OnInit{
 
-  displayedColumns: string[] = ['date', 'time', 'available', 'price'];
-  // dataSource = ELEMENT_DATA;
+  @ViewChild('content') public templateref: TemplateRef<any>;
+
+
+  public displayedColumns = ['price', 'Date', 'AdvType', 'Time', 'addToCart'];
+  public dataSource = new MatTableDataSource<BookingTableData>();
+
   dateEntered : String;
   month:String;
   year:String;
@@ -40,7 +30,8 @@ export class BooknowComponent implements OnInit{
   userEmail: String;
   adventureType :String;
   msg:String='';
-  constructor(private BookService : BookService, private userService: UserService,private router:Router){
+  constructor(private BookService : BookService, private userService: UserService,private router:Router,
+    private modalService: NgbModal, private modalConfig: NgbModalConfig){
     
   }
  
@@ -65,6 +56,7 @@ export class BooknowComponent implements OnInit{
         .subscribe(data => {
           console.log("Date before booking"+ this.dateEntered);
         this.dateObject = data;
+        this.dataSource.data = data as BookingTableData[];
         if(this.dateObject.length==0)
         {
          this.msg="No Bookings Available for this date";
@@ -98,9 +90,18 @@ export class BooknowComponent implements OnInit{
     this.BookService.addCartItem(this.cartData)
       .subscribe(data => {
         console.log(data);
+        this.modalService.open(this.templateref, { centered: true });
       }, error => {
         
     });
   }
    
+}
+
+export interface BookingTableData{
+  price: string;
+  Date: string;
+  AdvType: Date;
+  Time: string;
+  addToCart: string;
 }

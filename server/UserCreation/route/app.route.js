@@ -24,6 +24,8 @@ module.exports = (app) => {
     app.post('/upload', blogCtrl.upload);
     app.get('/posts', blogCtrl.getPosts);
     app.put('/updateLikes', blogCtrl.updateLikes);
+    app.delete('/deletePost/:id', blogCtrl.deletePost);
+    app.put('/addComment', blogCtrl.addComment);
     // app.post('/addPost', blogCtrl.addPost);
 
     app.get('/adventures/:adventureType', adventures.getAdvList);

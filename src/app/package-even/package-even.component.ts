@@ -3,6 +3,8 @@ import { PackageService } from '../service/package.service';
 import { NgForOf } from '@angular/common';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import * as $ from 'jquery';
+
 
 @Component({
   selector: 'app-package-even',
@@ -31,9 +33,14 @@ export class PackageEvenComponent implements OnInit {
     .subscribe(data => {
      console.log(data);
       this.packageObject=data;
-    
+      this.packageObject.forEach(onePackage => {
+        onePackage.img = this.getImgData(onePackage.img);
+      });
     //  this.PackageService.savePackage(data);
-    
+      var $preloader = $('.wrapper');
+      var $spinner   = $preloader.find('.loader');
+      $spinner.delay(3000).fadeOut('slow');
+      $preloader.delay(3000).fadeOut('slow');
     }, error => {
       this.errorMsg = error.error.message;
      

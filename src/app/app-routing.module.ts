@@ -15,6 +15,8 @@ import { BooknowComponent } from './booknow/booknow.component';
 import { PackageEvenComponent } from './package-even/package-even.component';
 import { ShoppingCartPageComponent } from './shopping-cart-page/shopping-cart-page.component';
 import { BlogComponent } from './blog/blog.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import {FaqComponent} from './faq/faq.component';
 
 
 const routes: Routes = [
@@ -33,7 +35,8 @@ const routes: Routes = [
   {path:'packagelist',component: PackageEvenComponent, canActivate: [AuthGuard]},
   {path:'scpackage',component:ShoppingCartPageComponent, canActivate: [AuthGuard]},
   {path:'blog', component: BlogComponent, canActivate: [AuthGuard]},
-
+  {path:'contactus', component: ContactUsComponent},
+  {path: 'faq', component: FaqComponent}
 
 ];
 

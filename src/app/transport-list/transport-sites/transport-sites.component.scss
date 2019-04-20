@@ -1,14 +1,13 @@
 @import '../../preloader-page/preloader-page.component.scss';
 .sites-container{
-    margin-top: 5rem;
-    font-family: "Dancing Script";
+    padding-top: 5rem;
     min-height: 900px;
+    position: relative;
     .wrapper {
         margin-top: 0;
     }
     article{
         color: #ffffff;
-        font-family: "Dancing Script";
     }
     .badge{
         padding: .75em .6em;
@@ -67,4 +66,31 @@
             color: #50d6d6;
         }
     }
+}
+#wrapper{
+    position: fixed;
+    width: 100%;
+    height: 800px;
+    transition: 1000ms;
+    background-position: 50% 50%;
+    background-size: cover;
+    opacity: 0.3;
+}
+.rentalcars{
+    background-image: url("../../../assets/images/transporttypes/type0.jpg");
+}
+.railtravels{
+    background-image: url("../../../assets/images/transporttypes/type1.jpg");
+}
+.flights{
+    background-image: url("../../../assets/images/transporttypes/type2.jpg");
+}
+.motorcycle{
+    background-image: url("../../../assets/images/transporttypes/type3.jpg");
+}
+.bus{
+    background-image: url("../../../assets/images/transporttypes/type4.jpg");
+}
+.ferries{
+    background-image: url("../../../assets/images/transporttypes/type5.jpg");
 }
