@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { BookService } from '../service/Book.service';
 import { UserService } from '../service/user.service';
 import { MatTableDataSource } from '@angular/material';
+import { decode } from '@angular/router/src/url_tree';
 
 
 declare let paypal: any;
@@ -83,11 +84,11 @@ export class ShoppingCartPageComponent implements OnInit, AfterViewChecked {
     .subscribe(data => {
       this.cartItems = data;
       this.cartItems.forEach(cart => {
-        this.total = this.total + parseInt(cart.packageDetails.price);
+        cart.packageDetails.title = decodeURI(cart.packageDetails.title);
+        this.total = this.total + parseInt(cart.packageDetails.price)-1;
         
       });
       console.log(data);
-      this.total= this.total-1;
       this.dataSource.data = data as CartTableData[];
 
       }, error => {

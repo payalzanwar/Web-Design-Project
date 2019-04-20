@@ -81,7 +81,7 @@ export class BooknowComponent implements OnInit{
     this.cartData = {
       email: this.userEmail,
       packageDetails: {
-        title: 'Charming California',
+        title: this.adventureType,
         date: booking.Date,
         time: booking.Time,
         price: booking.price
