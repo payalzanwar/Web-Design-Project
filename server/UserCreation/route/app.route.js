@@ -16,17 +16,14 @@ module.exports = (app) => {
     app.post('/package',package.create);
 
     app.get('/transportSites/:transportType', transportSiteController.getSites);
-    app.post('/transportSite/create', transportSiteController.addSites);
-
     app.get('/accomodationSites', accomodationSitesCtrl.getSites);
-    app.post('/accomodationSite/create', accomodationSitesCtrl.addSites);
+    
 
     app.post('/upload', blogCtrl.upload);
     app.get('/posts', blogCtrl.getPosts);
     app.put('/updateLikes', blogCtrl.updateLikes);
     app.delete('/deletePost/:id', blogCtrl.deletePost);
     app.put('/addComment', blogCtrl.addComment);
-    // app.post('/addPost', blogCtrl.addPost);
 
     app.get('/adventures/:adventureType', adventures.getAdvList);
     app.post('/adventure/create', adventures.createadv);
