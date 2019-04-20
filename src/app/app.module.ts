@@ -26,6 +26,8 @@ import { ShoppingCartPageComponent } from './shopping-cart-page/shopping-cart-pa
 import { BlogComponent } from './blog/blog.component';
 
 import { SortList } from './common/util/sortList.pipe';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { FaqComponent } from './faq/faq.component';
 
 
 @NgModule({
@@ -46,7 +48,9 @@ import { SortList } from './common/util/sortList.pipe';
     ShoppingCartPackageComponent,
     ShoppingCartPageComponent,
     BlogComponent,
-    SortList
+    SortList,
+    ContactUsComponent,
+    FaqComponent
 
   ],
   imports: [
