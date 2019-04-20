@@ -1,39 +1,45 @@
-.main-section{
+@media only screen and (min-width: 992px) {
+    a{
+        text-decoration: none;
+    }
+ .main-section{
+    text-decoration: none;
     position: absolute;
     color: white;
     background-color: black;
     height:40%;
-}
-
-.section1{
+ }
+ 
+ .section1{
     position: relative;
-}
-
-.section2{
+ }
+ 
+ .section2{
     position: relative;
-}
-
-.section2{
+ }
+ 
+ .section2{
     position: relative;
-}
-
-.help-section{
+ }
+ 
+ 
+ .help-section{
     padding: 10%;
     position: relative;
     float: left;
     width: 50%;
-    
-}
-
-.contact-section{
+ 
+ }
+ 
+ .contact-section{
     padding-top: 10%;
     position: relative;
     float: right;
     width: 50%;
     top: 0%;
-}
-
-.socialmedia-section{
+ }
+ 
+ .socialmedia-section{
     position: relative;
     padding-top: 15%;
     padding-left: 20%;
@@ -41,13 +47,37 @@
     top: 0%;
     width: 100%;
     height: 50%;
-}
-.logo-section{
+ }
+ 
+ .logo-section{
     position: relative;
     width:100%;
     height:100%;
     background-color: white;
-}
-.logo-section >img{
+ }
+ .logo-section >img{
     width:100%;
-}
+ }
+ }
+ 
+ @media only screen and (max-width: 992px) {
+    a{
+        text-decoration: none;
+    }
+    .main-section{
+        text-decoration: none;
+        text-align: center;
+        color: white;
+    }
+    .section1{
+        display: none;
+    }
+    .section2{
+        height: 50%;
+    }
+    .socialmedia-section{
+        padding-top:3%;
+    }
+ 
+ 
+  }
