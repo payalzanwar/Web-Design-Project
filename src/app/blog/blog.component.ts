@@ -88,6 +88,8 @@ export class BlogComponent implements OnInit {
       .subscribe(data => {
         console.log(data);
         this.posts = [];
+        this.model.postDesc = '';
+        this.selectedFile = '';
         this.getAllPosts();
       }, error => {
         
